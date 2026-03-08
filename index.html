@@ -113,10 +113,48 @@
   .comp-summary-card .avg-price { font-size: 24px; font-weight: 800; }
   .comp-summary-card .range-text { font-size: 12px; color: #666; }
 
+  /* ===== MOBILE RESPONSIVE ===== */
+
+  /* Scrollable table wrapper */
+  .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 8px -4px; }
+  .table-scroll table { min-width: 600px; }
+
   @media (max-width: 768px) {
-    .header-grid, .strategy-grid, .pros-cons, .prop-grid, .comp-summary { grid-template-columns: 1fr; }
-    .container { padding: 12px; }
-    .header { padding: 20px; }
+    .header-grid, .strategy-grid, .pros-cons, .prop-grid, .comp-summary, .inspect-grid { grid-template-columns: 1fr; }
+    .container { padding: 10px; }
+    .header { padding: 16px; border-radius: 8px; }
+    .header h1 { font-size: 20px; }
+    .header .subtitle { font-size: 12px; }
+    .header-stat .value { font-size: 18px; }
+    .card { padding: 16px; border-radius: 8px; }
+    .card h2 { font-size: 16px; }
+    .strategy-card .range { font-size: 18px; }
+    .strategy-card { padding: 14px; }
+    .insight { padding: 16px; border-radius: 8px; }
+    .insight p { font-size: 13px; }
+    th { padding: 8px 10px; font-size: 11px; white-space: nowrap; }
+    td { padding: 8px 10px; font-size: 12px; }
+    .cost-row { flex-wrap: wrap; gap: 2px; }
+    .prop-row { flex-wrap: wrap; gap: 2px; }
+
+    /* Full inspection report mobile fixes */
+    .resp-grid { grid-template-columns: 1fr !important; }
+    .resp-grid-priority { grid-template-columns: 1fr !important; }
+
+    /* Inspection section nav pills */
+    [style*="display:flex"][style*="flex-wrap:wrap"] {
+      gap: 4px !important;
+    }
+
+    /* Inspection section inline grids */
+    [style*="grid-template-columns:1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* Priority actions summary */
+    [style*="grid-template-columns: 1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+    }
   }
 </style>
 </head>
@@ -312,6 +350,7 @@
 <!-- RUNNYMEDE RD COMPS (Same Street) -->
 <div class="card">
   <h2>Comparable Sales — Runnymede Road (Main Street)</h2>
+  <div class="table-scroll">
   <table>
     <thead>
       <tr>
@@ -358,6 +397,7 @@
       </tr>
     </tbody>
   </table>
+  </div>
   <p style="font-size: 12px; color: #888; margin-top: 10px;">
     <strong>Key Takeaway:</strong> 545 Runnymede is the most direct comp — same street, similar size, no garage, sold Dec 2025 for $1,335K (listed at $1,080K — went 23.6% over asking in a bidding war, 7 DOM). 636 Runnymede sold higher ($1.45M, +11.6% over ask) but was larger (2000-2500 sqft), wider lot (27'), and had 5 bathrooms. Both sold in 7 days with aggressive over-asking bids — confirming that even main-street homes attract bidding wars when priced right. 87 Runnymede was much smaller (700-1100 sqft), needed work, and sat for 33 days.
   </p>
@@ -367,6 +407,7 @@
 <div class="card">
   <h2>🏠 Active Competition on Runnymede Rd</h2>
   <p style="font-size: 13px; color: #666; margin-bottom: 12px;">Other Runnymede Rd listings currently for sale. These compete for the same buyer pool but also help establish market expectations for main-street properties.</p>
+  <div class="table-scroll">
   <table>
     <thead>
       <tr>
@@ -406,6 +447,7 @@
       </tr>
     </tbody>
   </table>
+  </div>
 
   <div class="callout-good" style="margin-top: 16px;">
     <strong>✅ 530 Runnymede's Competitive Position:</strong>
@@ -417,6 +459,7 @@
 <div class="card">
   <h2>Comparable Sales — Nearby Side Streets (Premium Reference)</h2>
   <p style="font-size: 13px; color: #666; margin-bottom: 12px;">These comps show what similar homes sell for <em>without</em> the main street discount. The difference quantifies the Runnymede Road penalty.</p>
+  <div class="table-scroll">
   <table>
     <thead>
       <tr>
@@ -513,6 +556,7 @@
       </tr>
     </tbody>
   </table>
+  </div>
   <p style="font-size: 12px; color: #888; margin-top: 10px;">
     <strong>Key Takeaway:</strong> The freshest comp — 519 Durie (sold March 4, just 3 days ago!) — went for $1,702K, 6.4% over asking, on a side street only 0.3km from 530 Runnymede. Side-street detached homes in the area sell for $1.56M–$1.83M. Applying the 15–25% main street discount puts 530 Runnymede's value at approximately $1,250K–$1,400K.
   </p>
@@ -944,6 +988,7 @@
   <div style="background:#f5f5f5; border-left:4px solid #333; padding:15px 20px; margin-bottom:20px; border-radius:0 6px 6px 0;">
     <h2 style="color:#333; margin-top:0; font-size:20px;">RecalChek — Appliance Details</h2>
     <p style="font-size:13px; color:#666; margin-bottom:12px;">Product recall check included at no extra cost. Separate report from RecallChek with any notices and contacts.</p>
+    <div class="table-scroll">
     <table style="width:100%; border-collapse:collapse; font-size:13px;">
       <tr style="background:#e8e8e8;">
         <th style="padding:6px 10px; text-align:left; border:1px solid #ddd;">Appliance</th>
@@ -959,6 +1004,7 @@
       <tr style="background:#f9f9f9;"><td style="padding:6px 10px; border:1px solid #ddd;">Washer</td><td style="padding:6px 10px; border:1px solid #ddd;">LG</td></tr>
       <tr><td style="padding:6px 10px; border:1px solid #ddd;">Dryer</td><td style="padding:6px 10px; border:1px solid #ddd;">LG</td></tr>
     </table>
+    </div>
   </div>
 
   <!-- PRIORITY ACTIONS SUMMARY -->
