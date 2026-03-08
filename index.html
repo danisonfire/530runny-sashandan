@@ -156,6 +156,39 @@
       grid-template-columns: 1fr !important;
     }
   }
+
+  /* Collapsible sections (mobile) */
+  details.section-collapse > summary {
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    padding-right: 30px;
+  }
+  details.section-collapse > summary::-webkit-details-marker { display: none; }
+  details.section-collapse > summary::marker { display: none; content: ""; }
+  details.section-collapse > summary::after {
+    content: "▸";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #999;
+    transition: transform 0.2s;
+  }
+  details.section-collapse[open] > summary::after {
+    transform: translateY(-50%) rotate(90deg);
+  }
+  details.section-collapse > summary h2 {
+    display: inline;
+  }
+
+  /* On desktop, always show open */
+  @media (min-width: 769px) {
+    details.section-collapse > summary { pointer-events: none; }
+    details.section-collapse > summary::after { display: none; }
+  }
+
 </style>
 </head>
 <body>
@@ -186,7 +219,8 @@
 
 <!-- SUBJECT PROPERTY DETAILS -->
 <div class="card">
-  <h2>Subject Property Details</h2>
+  <details class="section-collapse" open>
+  <summary><h2>Subject Property Details</h2></summary>
   <div class="prop-grid">
     <div>
       <div class="prop-row"><span class="key">Address</span><span class="val"><a href="https://housesigma.com/on/toronto-real-estate/530-runnymede-rd/home/ZNkKJ3JPB26yd4V6?id_listing=amgL7Axx6glyZ1MW" target="_blank" style="color:inherit;text-decoration:underline;">530 Runnymede Rd</a>, Toronto M6S 2Z8</span></div>
@@ -242,11 +276,13 @@
     <strong>🏪 Former Commercial Building — "The Funky Factor":</strong>
     <span>This property is believed to have been a butcher shop in its earlier life. The exterior has an unusual storefront-like appearance that sets it apart from every other house on Runnymede — it doesn't look like a typical residential home. The interior layout is also unconventional: functional, but quirky and unlike the standard room flow you'd find in neighbouring houses. <strong>This is a double-edged sword.</strong> For buyers who value character and uniqueness, it's a huge draw. But it narrows the resale pool — some buyers won't get past the non-traditional look. Factor this into your long-term hold strategy: this house may take longer to resell and may attract fewer competing offers than a "normal" detached home at the same price point.</span>
   </div>
+  </details>
 </div>
 
 <!-- HOME INSPECTION SUMMARY -->
 <div class="card">
-  <h2>🔍 Home Inspection Summary</h2>
+  <details class="section-collapse" open>
+  <summary><h2>🔍 Home Inspection Summary</h2></summary>
   <p style="font-size: 13px; color: #666; margin-bottom: 12px;">Carson, Dunlop & Associates Ltd. — Report #96257, inspected February 26, 2026 by Jonathan Dube, RHI. 42-page report covering all major systems.</p>
 
   <div class="inspect-grid">
@@ -304,11 +340,13 @@
     <strong>📋 Items Requiring Spring Follow-Up:</strong>
     <span>The winter inspection could not evaluate: (1) Roof covering fully (snow), (2) AC functionality (cold weather), (3) Outdoor faucets (winterized), (4) Lot grading (snow-covered), (5) Downspout discharge points. Budget for a spring re-check on these items.</span>
   </div>
+  </details>
 </div>
 
 <!-- ESTIMATED REMEDIATION COSTS -->
 <div class="card">
-  <h2>💰 Estimated Remediation Costs (from Inspection)</h2>
+  <details class="section-collapse" open>
+  <summary><h2>💰 Estimated Remediation Costs (from Inspection)</h2></summary>
   <p style="font-size: 13px; color: #666; margin-bottom: 12px;">Based on Carson Dunlop findings. Priority items that should factor into offer pricing.</p>
 
   <div class="cost-table">
@@ -325,11 +363,13 @@
   <p style="font-size: 12px; color: #888; margin-top: 10px;">
     <strong>Overall Assessment:</strong> No major structural or electrical red flags — this is a well-maintained 1920s home. The biggest concern is the 25-year-old water heater (immediate replacement needed). The exterior mortar/walkout work is typical for a century home. The inability to fully inspect the roof and AC in winter adds some uncertainty — budget for potential roof work if the covering turns out to be older.
   </p>
+  </details>
 </div>
 
 <!-- MAIN STREET IMPACT -->
 <div class="card">
-  <h2>⚠️ Main Street Impact Analysis</h2>
+  <details class="section-collapse" open>
+  <summary><h2>⚠️ Main Street Impact Analysis</h2></summary>
   <p style="font-size: 14px; margin-bottom: 12px;"><a href="https://housesigma.com/on/toronto-real-estate/530-runnymede-rd/home/ZNkKJ3JPB26yd4V6?id_listing=amgL7Axx6glyZ1MW" target="_blank" style="color:inherit;text-decoration:underline;">530 Runnymede Rd</a> sits directly on <strong>Runnymede Road</strong>, a busy main arterial street. This is the single most significant factor affecting its market value relative to comparable homes on quiet side streets.</p>
 
   <div class="impact-box">
@@ -350,11 +390,13 @@
     </div>
   </div>
   <p style="font-size: 13px; color: #666; margin-top: 8px;">The data clearly shows a <strong>$200K–$500K discount</strong> for Runnymede Rd homes vs. comparable side-street properties. This represents roughly a <strong>15–25% main street discount</strong> in this specific micro-market.</p>
+  </details>
 </div>
 
 <!-- RUNNYMEDE RD COMPS (Same Street) -->
 <div class="card">
-  <h2>Comparable Sales — Runnymede Road (Main Street)</h2>
+  <details class="section-collapse" open>
+  <summary><h2>Comparable Sales — Runnymede Road (Main Street)</h2></summary>
   <div class="table-scroll">
   <table>
     <thead>
@@ -406,11 +448,13 @@
   <p style="font-size: 12px; color: #888; margin-top: 10px;">
     <strong>Key Takeaway:</strong> <a href="https://housesigma.com/on/toronto-real-estate/545-runnymede-road/home/b1DBW7Rlv5EYqlAp?id_listing=K8OgYBzOZ6oYJmG2" target="_blank" style="color:inherit;text-decoration:underline;">545 Runnymede</a> is the most direct comp — same street, similar size, no garage, sold Dec 2025 for $1,335K (listed at $1,080K — went 23.6% over asking in a bidding war, 7 DOM). <a href="https://housesigma.com/on/toronto-real-estate/636-runnymede-road/home/JjAXw7QGLbXYQOzg?id_listing=MWBVyZW9e4q7Kemj" target="_blank" style="color:inherit;text-decoration:underline;">636 Runnymede</a> sold higher ($1.45M, +11.6% over ask) but was larger (2000-2500 sqft), wider lot (27'), and had 5 bathrooms. Both sold in 7 days with aggressive over-asking bids — confirming that even main-street homes attract bidding wars when priced right. <a href="https://housesigma.com/on/toronto-real-estate/87-runnymede-road/home/aQmD7zn2gK17J9Bo?id_listing=VLaGyGkoPVMyW1ZD" target="_blank" style="color:inherit;text-decoration:underline;">87 Runnymede</a> was much smaller (700-1100 sqft), needed work, and sat for 33 days.
   </p>
+  </details>
 </div>
 
 <!-- ACTIVE COMPETITION ON RUNNYMEDE -->
 <div class="card">
-  <h2>🏠 Active Competition on Runnymede Rd</h2>
+  <details class="section-collapse" open>
+  <summary><h2>🏠 Active Competition on Runnymede Rd</h2></summary>
   <p style="font-size: 13px; color: #666; margin-bottom: 12px;">Other Runnymede Rd listings currently for sale. These compete for the same buyer pool but also help establish market expectations for main-street properties.</p>
   <div class="table-scroll">
   <table>
@@ -458,11 +502,13 @@
     <strong>✅ <a href="https://housesigma.com/on/toronto-real-estate/530-runnymede-rd/home/ZNkKJ3JPB26yd4V6?id_listing=amgL7Axx6glyZ1MW" target="_blank" style="color:inherit;text-decoration:underline;">530 Runnymede</a>'s Competitive Position:</strong>
     <span>530 is the best value on Runnymede Rd right now. It's 1500–2000 sqft (much larger than 470's 700–1100 sqft), renovated (unlike 317's original condition), and priced $300K–$470K below the competition. The 99/100 popularity score confirms buyers see this. <a href="https://housesigma.com/on/toronto-real-estate/470-runnymede-rd/home/2Z5BX32AlRO7Dar0?id_listing=NkKJ3JJ1A6m3d4V6" target="_blank" style="color:inherit;text-decoration:underline;">470 Runnymede</a> has failed to sell 3 times — it's a cautionary tale about overpricing on a main street. <a href="https://housesigma.com/on/toronto-real-estate/317-runnymede-rd/home/zVwod7vW0j935mGN?id_listing=56k97w00Qln3KRjD" target="_blank" style="color:inherit;text-decoration:underline;">317 Runnymede</a> at $1,669K appears aspirational given that the fully renovated <a href="https://housesigma.com/on/toronto-real-estate/636-runnymede-road/home/JjAXw7QGLbXYQOzg?id_listing=MWBVyZW9e4q7Kemj" target="_blank" style="color:inherit;text-decoration:underline;">636 Runnymede</a> (bigger house, wider lot) only fetched $1,450K.</span>
   </div>
+  </details>
 </div>
 
 <!-- SIDE STREET COMPS -->
 <div class="card">
-  <h2>Comparable Sales — Nearby Side Streets (Premium Reference)</h2>
+  <details class="section-collapse" open>
+  <summary><h2>Comparable Sales — Nearby Side Streets (Premium Reference)</h2></summary>
   <p style="font-size: 13px; color: #666; margin-bottom: 12px;">These comps show what similar homes sell for <em>without</em> the main street discount. The difference quantifies the Runnymede Road penalty.</p>
   <div class="table-scroll">
   <table>
@@ -565,11 +611,13 @@
   <p style="font-size: 12px; color: #888; margin-top: 10px;">
     <strong>Key Takeaway:</strong> The freshest comp — <a href="https://housesigma.com/on/toronto-real-estate/519-durie-st/home/b1DBW7Rv9Mk7qlAp?id_listing=DO1w3W19Rqqy8Jg0" target="_blank" style="color:inherit;text-decoration:underline;">519 Durie</a> (sold March 4, just 3 days ago!) — went for $1,702K, 6.4% over asking, on a side street only 0.3km from <a href="https://housesigma.com/on/toronto-real-estate/530-runnymede-rd/home/ZNkKJ3JPB26yd4V6?id_listing=amgL7Axx6glyZ1MW" target="_blank" style="color:inherit;text-decoration:underline;">530 Runnymede</a>. Side-street detached homes in the area sell for $1.56M–$1.83M. Applying the 15–25% main street discount puts <a href="https://housesigma.com/on/toronto-real-estate/530-runnymede-rd/home/ZNkKJ3JPB26yd4V6?id_listing=amgL7Axx6glyZ1MW" target="_blank" style="color:inherit;text-decoration:underline;">530 Runnymede</a>'s value at approximately $1,250K–$1,400K.
   </p>
+  </details>
 </div>
 
 <!-- MARKET CONTEXT -->
 <div class="card">
-  <h2>Market Context — Toronto W02 (Feb/Mar 2026)</h2>
+  <details class="section-collapse" open>
+  <summary><h2>Market Context — Toronto W02 (Feb/Mar 2026)</h2></summary>
   <div class="prop-grid">
     <div>
       <div class="prop-row"><span class="key">Avg. Detached Price (Toronto)</span><span class="val">~$1,144,400</span></div>
@@ -584,12 +632,13 @@
     </div>
   </div>
   <p style="font-size: 13px; color: #666; margin-top: 12px;">The broader Toronto detached market is softening, with prices down ~8% year-over-year. This creates a buyer-favorable environment, especially for properties with known drawbacks (main street, electric heating). Inventory is rising and bidding wars are less common than 2024.</p>
+  </details>
 </div>
 
 <!-- OFFER STRATEGY -->
 <div class="card">
-  <h2>Offer Strategy — Offer Night: Tuesday March 10</h2>
-
+  <details class="section-collapse" open>
+  <summary><h2>Offer Strategy — Offer Night: Tuesday March 10</h2></summary>
   <div class="callout-danger" style="margin-bottom: 16px;">
     <strong>⚠️ MULTIPLE OFFERS EXPECTED:</strong>
     <span>With 99/100 listing popularity, listing priced $50K below SigmaEstimate, and the open house weekend happening now (Mar 8), expect significant competition on offer night. The most recent side-street comp (<a href="https://housesigma.com/on/toronto-real-estate/519-durie-st/home/b1DBW7Rv9Mk7qlAp?id_listing=DO1w3W19Rqqy8Jg0" target="_blank" style="color:inherit;text-decoration:underline;">519 Durie</a>, $1,702K) sold 6.4% over asking just 3 days ago — indicating strong demand in this exact area right now.</span>
@@ -624,11 +673,13 @@
       <strong>4. Closing date:</strong> Be flexible — match the seller's preference (they've owned since 2012, likely need time to find a new home). A 60–90 day close may be appealing to them.
     </div>
   </div>
+  </details>
 </div>
 
 <!-- ADVANTAGES & RISKS -->
 <div class="card">
-  <h2>Advantages & Considerations</h2>
+  <details class="section-collapse" open>
+  <summary><h2>Advantages & Considerations</h2></summary>
   <div class="pros-cons">
     <div class="pros-list">
       <h3>✅ Strengths</h3>
@@ -660,11 +711,13 @@
       </ul>
     </div>
   </div>
+  </details>
 </div>
 
 <!-- NEGOTIATION LEVERAGE -->
 <div class="card">
-  <h2>Negotiation Leverage Points</h2>
+  <details class="section-collapse" open>
+  <summary><h2>Negotiation Leverage Points</h2></summary>
   <div style="font-size: 13px; line-height: 1.8;">
     <p>When positioning your offer, these are the key points to justify a price below the emotional anchor of the listing:</p>
     <ol style="margin-top: 10px; padding-left: 20px;">
@@ -678,17 +731,21 @@
       <li><strong>Unconventional building (former butcher shop):</strong> The storefront-like exterior and non-standard interior layout will polarize buyers. Some will love the character; others will walk away. This narrows the resale pool and is a legitimate reason to price below a "normal" detached home.</li>
     </ol>
   </div>
+  </details>
 </div>
 
 <!-- KEY INSIGHT -->
 <div class="insight">
-  <h2>Bottom Line</h2>
+  <details class="section-collapse" open>
+  <summary><h2>Bottom Line</h2></summary>
   <p><a href="https://housesigma.com/on/toronto-real-estate/530-runnymede-rd/home/ZNkKJ3JPB26yd4V6?id_listing=amgL7Axx6glyZ1MW" target="_blank" style="color:inherit;text-decoration:underline;">530 Runnymede</a> is a solid detached home in a premium neighborhood, with standout features like a 2-car garage, deep lot, and basement suite potential. The Carson Dunlop inspection is largely reassuring — structure sound, 200A electrical, gas furnace (12 yrs old), $6K–$14K in known repairs. <strong>However, with 99/100 listing popularity, expect serious competition on offer night (Tuesday March 10).</strong> The freshest comp — <a href="https://housesigma.com/on/toronto-real-estate/519-durie-st/home/b1DBW7Rv9Mk7qlAp?id_listing=DO1w3W19Rqqy8Jg0" target="_blank" style="color:inherit;text-decoration:underline;">519 Durie St</a>, just 0.3km away, sold 3 days ago for $1,702K (+6.4% over asking) — proves strong current demand in this exact area. Applying the main-street discount: fair value is <strong>$1,325K–$1,400K</strong>. The sweet spot is <strong>$1,325K–$1,375K</strong>. If you need to win, be prepared to go up to <strong>$1,400K–$1,425K</strong> — still below the renovated <a href="https://housesigma.com/on/toronto-real-estate/636-runnymede-road/home/JjAXw7QGLbXYQOzg?id_listing=MWBVyZW9e4q7Kemj" target="_blank" style="color:inherit;text-decoration:underline;">636 Runnymede</a> ($1.45M) and well-supported by the comp data. The seller bought in 2012 for $700K — they have significant equity and will likely accept a strong offer in this range.</p>
+  </details>
 </div>
 
 <!-- SELLER'S PERSPECTIVE -->
 <div class="card" style="border-left: 4px solid #9333ea; margin-top: 20px;">
-  <h2 style="color: #9333ea;">🪞 Seller's Perspective — What the Other Side Is Thinking</h2>
+  <details class="section-collapse" open>
+  <summary><h2 style="color: #9333ea;">🪞 Seller's Perspective — What the Other Side Is Thinking</h2></summary>
   <p style="font-size: 13px; color: #666; margin-bottom: 16px;">Understanding the seller's mindset and their agent's expectations helps frame the right offer. Here's what's likely happening on the other side of the table.</p>
 
   <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
@@ -756,6 +813,7 @@
       A <strong>$1,380K clean offer</strong> with a <strong>$100K deposit</strong> and <strong>flexible closing</strong> lands at the very top of the seller's realistic expectations. It clears the 545 Runnymede anchor by $45K, signals serious intent, and removes all risk for the seller. The only scenario where this doesn't win is if another buyer comes in clean at $1,400K+ — which requires someone willing to pay more than the data supports. The seller's agent will look at your offer and tell their client: <strong>"This is a strong offer. Taking it is the smart move."</strong>
     </div>
   </div>
+  </details>
 </div>
 
 <!-- ============================== -->
@@ -783,12 +841,14 @@
 
   <!-- OVERVIEW -->
   <div style="background:#f8f8f8; border-left:4px solid #333; padding:15px 20px; margin-bottom:20px; border-radius:0 6px 6px 0;">
-    <h2 style="color:#333; margin-top:0; font-size:20px;">Overview — Key Recommendations</h2>
+  <details class="section-collapse" open>
+  <summary><h2 style="color:#333; margin-top:0; font-size:20px;">Overview — Key Recommendations</h2></summary>
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px;">
       <div style="background:white; padding:12px; border-radius:6px; border:1px solid #ddd;">
         <h4 style="color:#8B8B00; margin:0 0 8px 0;">Roofing</h4>
         <p style="margin:0; font-size:13px;">Roof partially covered with snow — could not be fully inspected. Visible portions in good overall condition. <strong>Task:</strong> Further evaluation by specialist when weather permits. <strong>Time:</strong> ASAP.</p>
-      </div>
+  </details>
+  </div>
       <div style="background:white; padding:12px; border-radius:6px; border:1px solid #ddd;">
         <h4 style="color:#006d6f; margin:0 0 8px 0;">Cooling & Heat Pump</h4>
         <p style="margin:0; font-size:13px;">Due to weather conditions and temperature (below 16°C), unit could not be tested. <strong>Task:</strong> Verify functionality with seller and/or check in spring. <strong>Cost:</strong> Minor.</p>
@@ -816,13 +876,15 @@
 
   <!-- EXTERIOR -->
   <div style="background:#eef5ee; border-left:4px solid #4a7c4f; padding:15px 20px; margin-bottom:20px; border-radius:0 6px 6px 0;">
-    <h2 style="color:#4a7c4f; margin-top:0; font-size:20px;">Exterior</h2>
+  <details class="section-collapse" open>
+  <summary><h2 style="color:#4a7c4f; margin-top:0; font-size:20px;">Exterior</h2></summary>
     <p style="margin-bottom:10px;"><strong>Wall surfaces & trim:</strong> Asphalt shingles, Brick, Metal siding</p>
 
     <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #e67e22;">
       <strong>ROOF DRAINAGE — Gutters</strong><br>
       <span style="font-size:13px;">Improper slope, ponding at rear. <strong>Task:</strong> Improve &nbsp;|&nbsp; <strong>Time:</strong> ASAP &nbsp;|&nbsp; <strong>Cost:</strong> Minor</span>
-    </div>
+  </details>
+  </div>
 
     <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #f39c12;">
       <strong>ROOF DRAINAGE — Downspouts</strong><br>
@@ -894,7 +956,8 @@
 
   <!-- ELECTRICAL -->
   <div style="background:#fffff0; border-left:4px solid #c4b200; padding:15px 20px; margin-bottom:20px; border-radius:0 6px 6px 0;">
-    <h2 style="color:#c4b200; margin-top:0; font-size:20px;">Electrical</h2>
+  <details class="section-collapse" open>
+  <summary><h2 style="color:#c4b200; margin-top:0; font-size:20px;">Electrical</h2></summary>
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px; font-size:13px;">
       <div><strong>General:</strong> Substantially updated</div>
       <div><strong>Service size:</strong> 200 Amps (240 Volts) &#9989;</div>
@@ -902,7 +965,8 @@
       <div><strong>Subpanel:</strong> Breakers — garage</div>
       <div><strong>Wiring:</strong> Copper (non-metallic + metallic sheathed)</div>
       <div><strong>Safety:</strong> GFCIs present, AFCIs present &#9989;</div>
-    </div>
+  </details>
+  </div>
 
     <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #e74c3c;">
       <strong>RECOMMENDATIONS — General</strong><br>
@@ -950,13 +1014,15 @@
 
   <!-- COOLING -->
   <div style="background:#f0fafa; border-left:4px solid #006d6f; padding:15px 20px; margin-bottom:20px; border-radius:0 6px 6px 0;">
-    <h2 style="color:#006d6f; margin-top:0; font-size:20px;">Cooling & Heat Pump</h2>
+  <details class="section-collapse" open>
+  <summary><h2 style="color:#006d6f; margin-top:0; font-size:20px;">Cooling & Heat Pump</h2></summary>
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px; font-size:13px;">
       <div><strong>Type:</strong> Air cooled (Amana)</div>
       <div><strong>Capacity:</strong> 24,000 BTU/hr</div>
       <div><strong>Approximate age:</strong> 5 years</div>
       <div><strong>Life expectancy:</strong> 10–15 years</div>
-    </div>
+  </details>
+  </div>
 
     <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #f39c12;">
       <strong>RECOMMENDATIONS — General</strong><br>
@@ -969,10 +1035,12 @@
 
   <!-- INSULATION -->
   <div style="background:#faf5e6; border-left:4px solid #b8860b; padding:15px 20px; margin-bottom:20px; border-radius:0 6px 6px 0;">
-    <h2 style="color:#b8860b; margin-top:0; font-size:20px;">Insulation & Ventilation</h2>
+  <details class="section-collapse" open>
+  <summary><h2 style="color:#b8860b; margin-top:0; font-size:20px;">Insulation & Ventilation</h2></summary>
     <div style="font-size:13px; margin-bottom:12px;">
       <strong>Attic/roof insulation:</strong> Not visible &nbsp;|&nbsp; <strong>Air/vapor barrier:</strong> Not visible
-    </div>
+  </details>
+  </div>
 
     <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #f39c12;">
       <strong>RECOMMENDATIONS — General</strong><br>
@@ -1032,12 +1100,13 @@
 
   <!-- INTERIOR -->
   <div style="background:#f8f0f8; border-left:4px solid #800080; padding:15px 20px; margin-bottom:20px; border-radius:0 6px 6px 0;">
-    <h2 style="color:#800080; margin-top:0; font-size:20px;">Interior</h2>
-
+  <details class="section-collapse" open>
+  <summary><h2 style="color:#800080; margin-top:0; font-size:20px;">Interior</h2></summary>
     <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #2ecc71;">
       <strong>CEILINGS AND WALLS — General</strong><br>
       <span style="font-size:13px;">Typical minor flaws — cosmetic only.</span>
-    </div>
+  </details>
+  </div>
 
     <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #2ecc71;">
       <strong>FLOORS — General</strong><br>
@@ -1066,7 +1135,8 @@
 
   <!-- RECALCHEK -->
   <div style="background:#f5f5f5; border-left:4px solid #333; padding:15px 20px; margin-bottom:20px; border-radius:0 6px 6px 0;">
-    <h2 style="color:#333; margin-top:0; font-size:20px;">RecalChek — Appliance Details</h2>
+  <details class="section-collapse" open>
+  <summary><h2 style="color:#333; margin-top:0; font-size:20px;">RecalChek — Appliance Details</h2></summary>
     <p style="font-size:13px; color:#666; margin-bottom:12px;">Product recall check included at no extra cost. Separate report from RecallChek with any notices and contacts.</p>
     <div class="table-scroll">
     <table style="width:100%; border-collapse:collapse; font-size:13px;">
@@ -1084,7 +1154,8 @@
       <tr style="background:#f9f9f9;"><td style="padding:6px 10px; border:1px solid #ddd;">Washer</td><td style="padding:6px 10px; border:1px solid #ddd;">LG</td></tr>
       <tr><td style="padding:6px 10px; border:1px solid #ddd;">Dryer</td><td style="padding:6px 10px; border:1px solid #ddd;">LG</td></tr>
     </table>
-    </div>
+  </details>
+  </div>
   </div>
 
   <!-- PRIORITY ACTIONS SUMMARY -->
@@ -1128,5 +1199,30 @@
 </div>
 
 </div>
+
+<script>
+(function() {
+  function toggleSections() {
+    var isMobile = window.innerWidth <= 768;
+    var sections = document.querySelectorAll('details.section-collapse');
+    sections.forEach(function(d) {
+      if (isMobile) {
+        d.removeAttribute('open');
+      } else {
+        d.setAttribute('open', '');
+      }
+    });
+  }
+  // Run on load
+  toggleSections();
+  // Run on resize (debounced)
+  var resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(toggleSections, 250);
+  });
+})();
+</script>
+
 </body>
 </html>
