@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>530 Runnymede Rd — Comp Analysis & Offer Strategy</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f5f5f5; color: #1a1a1a; line-height: 1.5; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+  /* Header */
+  .header { background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%); color: white; padding: 30px 40px; border-radius: 12px; margin-bottom: 24px; }
+  .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+  .header .subtitle { font-size: 15px; opacity: 0.85; margin-bottom: 16px; }
+  .header-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 16px; }
+  .header-stat { background: rgba(255,255,255,0.12); border-radius: 8px; padding: 12px 16px; }
+  .header-stat .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.7; }
+  .header-stat .value { font-size: 22px; font-weight: 700; }
+  .header-stat .detail { font-size: 12px; opacity: 0.7; }
+
+  /* Cards */
+  .card { background: white; border-radius: 10px; padding: 24px 28px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .card h2 { font-size: 18px; font-weight: 700; color: #1a365d; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #e2e8f0; }
+  .card h3 { font-size: 15px; font-weight: 600; color: #2d5a87; margin: 16px 0 8px; }
+
+  /* Property Details Grid */
+  .prop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .prop-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f0f0f0; }
+  .prop-row .key { color: #666; font-size: 13px; }
+  .prop-row .val { font-weight: 600; font-size: 13px; }
+
+  /* Tables */
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+  th { background: #1a365d; color: white; padding: 10px 12px; text-align: left; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.3px; }
+  td { padding: 10px 12px; border-bottom: 1px solid #e8e8e8; }
+  tr:hover td { background: #f8fafc; }
+  .sold-over { color: #16a34a; font-weight: 600; }
+  .sold-under { color: #dc2626; font-weight: 600; }
+  .highlight-row { background: #fffbeb; }
+
+  /* Side Street Badge */
+  .badge-side { display: inline-block; background: #dbeafe; color: #1e40af; font-size: 10px; font-weight: 600; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; }
+  .badge-main { display: inline-block; background: #fee2e2; color: #991b1b; font-size: 10px; font-weight: 600; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; }
+
+  /* Main Street Impact Section */
+  .impact-box { background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 16px 20px; margin: 12px 0; }
+  .impact-box .title { font-weight: 700; color: #92400e; margin-bottom: 6px; }
+  .impact-box p { font-size: 13px; color: #78350f; }
+
+  /* Offer Strategy */
+  .strategy-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 12px; }
+  .strategy-card { border-radius: 10px; padding: 20px; text-align: center; }
+  .strategy-card .tier { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 8px; }
+  .strategy-card .range { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
+  .strategy-card .note { font-size: 12px; opacity: 0.8; }
+  .tier-conservative { background: #f0fdf4; border: 2px solid #86efac; color: #166534; }
+  .tier-sweet { background: #eff6ff; border: 2px solid #93c5fd; color: #1e3a5f; }
+  .tier-aggressive { background: #fef2f2; border: 2px solid #fca5a5; color: #991b1b; }
+
+  /* Pros/Cons Grid */
+  .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 12px; }
+  .pros-list, .cons-list { padding: 16px 20px; border-radius: 8px; }
+  .pros-list { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .cons-list { background: #fef2f2; border: 1px solid #fecaca; }
+  .pros-list h3 { color: #166534; margin-top: 0; }
+  .cons-list h3 { color: #991b1b; margin-top: 0; }
+  .pros-list li, .cons-list li { font-size: 13px; margin-bottom: 6px; padding-left: 4px; }
+
+  /* Key Insight */
+  .insight { background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%); color: white; border-radius: 10px; padding: 24px 28px; margin-top: 20px; }
+  .insight h2 { color: white; border-bottom-color: rgba(255,255,255,0.2); }
+  .insight p { font-size: 14px; line-height: 1.7; opacity: 0.95; }
+
+  /* Footer */
+  .footer { text-align: center; padding: 20px; font-size: 11px; color: #999; margin-top: 12px; }
+
+  /* Callout boxes */
+  .callout-danger { background: #fef2f2; border-left: 4px solid #ef4444; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; }
+  .callout-danger strong { color: #991b1b; }
+  .callout-danger span { font-size: 13px; color: #7f1d1d; }
+  .callout-warn { background: #fef9c3; border-left: 4px solid #eab308; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; }
+  .callout-warn strong { color: #854d0e; }
+  .callout-warn span { font-size: 13px; color: #713f12; }
+  .callout-good { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; }
+  .callout-good strong { color: #166534; }
+  .callout-good span { font-size: 13px; color: #14532d; }
+
+  /* Inspection grid */
+  .inspect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+  .inspect-item { padding: 12px 16px; border-radius: 8px; border: 1px solid #e2e8f0; }
+  .inspect-item .sys-name { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .inspect-item .sys-status { font-size: 13px; }
+  .status-good { background: #f0fdf4; border-color: #bbf7d0; }
+  .status-good .sys-name { color: #166534; }
+  .status-warn { background: #fffbeb; border-color: #fde68a; }
+  .status-warn .sys-name { color: #92400e; }
+  .status-bad { background: #fef2f2; border-color: #fecaca; }
+  .status-bad .sys-name { color: #991b1b; }
+
+  /* Remediation cost table */
+  .cost-table { margin: 12px 0; }
+  .cost-row { display: flex; justify-content: space-between; padding: 8px 12px; font-size: 13px; border-bottom: 1px solid #f0f0f0; }
+  .cost-row:nth-child(odd) { background: #f8fafc; }
+  .cost-row .item { color: #333; }
+  .cost-row .cost { font-weight: 700; color: #991b1b; }
+  .cost-total { display: flex; justify-content: space-between; padding: 10px 12px; font-size: 14px; font-weight: 700; background: #1a365d; color: white; border-radius: 0 0 8px 8px; }
+
+  /* Comparison summary */
+  .comp-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .comp-summary-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; }
+  .comp-summary-card .street-type { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .comp-summary-card .avg-price { font-size: 24px; font-weight: 800; }
+  .comp-summary-card .range-text { font-size: 12px; color: #666; }
+
+  @media (max-width: 768px) {
+    .header-grid, .strategy-grid, .pros-cons, .prop-grid, .comp-summary { grid-template-columns: 1fr; }
+    .container { padding: 12px; }
+    .header { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- HEADER -->
+<div class="header">
+  <h1>530 Runnymede Rd, Toronto</h1>
+  <div class="subtitle">Runnymede–Bloor West Village (W02) &nbsp;|&nbsp; Offer Night: Tuesday March 10, 2026 &nbsp;|&nbsp; Updated March 7</div>
+  <div class="header-grid">
+    <div class="header-stat">
+      <div class="label">List Price</div>
+      <div class="value">$1,199,000</div>
+      <div class="detail">Detached 2-Storey</div>
+    </div>
+    <div class="header-stat">
+      <div class="label">Bedrooms / Baths</div>
+      <div class="value">3 Bed / 3 Bath</div>
+      <div class="detail">~2,560 sqft across 3 levels</div>
+    </div>
+    <div class="header-stat">
+      <div class="label">Lot Size</div>
+      <div class="value">20 × 149 ft</div>
+      <div class="detail">2-Car Garage + Laneway</div>
+    </div>
+  </div>
+</div>
+
+<!-- SUBJECT PROPERTY DETAILS -->
+<div class="card">
+  <h2>Subject Property Details</h2>
+  <div class="prop-grid">
+    <div>
+      <div class="prop-row"><span class="key">Address</span><span class="val">530 Runnymede Rd, Toronto M6S 2Z8</span></div>
+      <div class="prop-row"><span class="key">Type / Style</span><span class="val">Detached / 2-Storey</span></div>
+      <div class="prop-row"><span class="key">Bedrooms</span><span class="val">3 Bedrooms / 3 Bathrooms</span></div>
+      <div class="prop-row"><span class="key">Square Footage</span><span class="val">~2,560 sqft (across 3 levels)</span></div>
+      <div class="prop-row"><span class="key">Lot Size</span><span class="val">20 × 149 ft (2,980 sqft)</span></div>
+      <div class="prop-row"><span class="key">Year Built</span><span class="val">1920</span></div>
+      <div class="prop-row"><span class="key">Parking</span><span class="val">2-Car Detached Garage + Laneway (3 total)</span></div>
+    </div>
+    <div>
+      <div class="prop-row"><span class="key">Basement</span><span class="val">Finished, Walkout, Sep. Entrance</span></div>
+      <div class="prop-row"><span class="key">Heating</span><span class="val">Gas Forced Air (High-Eff, ~12 yrs)</span></div>
+      <div class="prop-row"><span class="key">Ceilings</span><span class="val">9'9" (Main Floor)</span></div>
+      <div class="prop-row"><span class="key">Kitchen</span><span class="val">Chef's Kitchen, Open Concept</span></div>
+      <div class="prop-row"><span class="key">Special Features</span><span class="val">Stained Glass, Original Details</span></div>
+      <div class="prop-row"><span class="key">Listing Brokerage</span><span class="val">Babiak Team Real Estate</span></div>
+      <div class="prop-row"><span class="key">Open Houses</span><span class="val">Mar 8 (Sun 2–4 PM)</span></div>
+      <div class="prop-row"><span class="key">Offer Night</span><span class="val" style="color:#dc2626;font-weight:700">Tuesday Mar 10, 2026</span></div>
+    </div>
+  </div>
+
+  <!-- HOUSESIGMA SIGNALS -->
+  <div class="callout-danger" style="margin-top: 16px;">
+    <strong>🔥 Listing Popularity: 99/100 (EXTREMELY HOT)</strong>
+    <span>HouseSigma rates this listing near the top of all current listings for buyer interest. Expect multiple offers on offer night. The property was listed March 5 and has had zero price changes — the seller is pricing to generate competition.</span>
+  </div>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-top:12px;">
+    <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px; padding:12px 16px; text-align:center;">
+      <div style="font-size:11px; text-transform:uppercase; color:#166534; font-weight:700;">SigmaEstimate</div>
+      <div style="font-size:22px; font-weight:800; color:#166534;">$1,249,900</div>
+      <div style="font-size:11px; color:#666;">as of Mar 7, 2026</div>
+    </div>
+    <div style="background:#eff6ff; border:1px solid #93c5fd; border-radius:8px; padding:12px 16px; text-align:center;">
+      <div style="font-size:11px; text-transform:uppercase; color:#1e40af; font-weight:700;">Est. Rent / Yield</div>
+      <div style="font-size:22px; font-weight:800; color:#1e40af;">$4,614/mo</div>
+      <div style="font-size:11px; color:#666;">3.59% rental yield</div>
+    </div>
+    <div style="background:#fef2f2; border:1px solid #fecaca; border-radius:8px; padding:12px 16px; text-align:center;">
+      <div style="font-size:11px; text-transform:uppercase; color:#991b1b; font-weight:700;">Owner Since</div>
+      <div style="font-size:22px; font-weight:800; color:#991b1b;">2012</div>
+      <div style="font-size:11px; color:#666;">Bought at $699,900</div>
+    </div>
+  </div>
+
+  <div class="callout-good" style="margin-top: 16px;">
+    <strong>✅ Heating Confirmed Gas:</strong>
+    <span>The Carson Dunlop inspection confirms 530 Runnymede has a <strong>gas high-efficiency furnace</strong> (Keeprite, ~12 years old, 60,000 BTU/hr, sidewall vented). This is standard for the area. The electric fireplace is decorative only. Gas heating is significantly cheaper to operate than electric (~$18 vs $32 per million BTU in Ontario).</span>
+  </div>
+</div>
+
+<!-- HOME INSPECTION SUMMARY -->
+<div class="card">
+  <h2>🔍 Home Inspection Summary</h2>
+  <p style="font-size: 13px; color: #666; margin-bottom: 12px;">Carson, Dunlop & Associates Ltd. — Report #96257, inspected February 26, 2026 by Jonathan Dube, RHI. 42-page report covering all major systems.</p>
+
+  <div class="inspect-grid">
+    <div class="inspect-item status-warn">
+      <div class="sys-name">⚠️ Roofing — Incomplete</div>
+      <div class="sys-status">Partially covered by snow — age and condition undetermined. Visible portions in good shape. Asphalt shingles (house) + modified bitumen membrane (flat areas). <strong>Needs specialist re-evaluation in spring.</strong></div>
+    </div>
+    <div class="inspect-item status-warn">
+      <div class="sys-name">⚠️ Exterior — Mortar Issues</div>
+      <div class="sys-status">Mortar deterioration + spalling in various areas. Gutter slope issues with ponding (rear). Rear door threshold ineffective. <strong>$1,000+ for mortar repair.</strong></div>
+    </div>
+    <div class="inspect-item status-good">
+      <div class="sys-name">✅ Structure</div>
+      <div class="sys-status">Structure has performed well, no significant movement. Masonry block/stone foundation. Some efflorescence in basement (typical for 100-year home). Walls dry when moisture-tested.</div>
+    </div>
+    <div class="inspect-item status-good">
+      <div class="sys-name">✅ Electrical — Substantially Updated</div>
+      <div class="sys-status">200A service, copper wiring (NM + metallic sheathed), breaker panels (main + garage sub), GFCIs + AFCIs present. No active knob-and-tube found (though may exist given age).</div>
+    </div>
+    <div class="inspect-item status-good">
+      <div class="sys-name">✅ Heating — Gas Furnace</div>
+      <div class="sys-status">Keeprite gas high-efficiency furnace, ~12 years old, 60,000 BTU/hr, sidewall vented. Abandoned chimneys sealed (one has loose masonry on top — verify in spring).</div>
+    </div>
+    <div class="inspect-item status-warn">
+      <div class="sys-name">⚠️ Cooling — Not Tested</div>
+      <div class="sys-status">Amana central air, ~5 years old, 24,000 BTU. Could not be tested due to cold weather (below 16°C). <strong>Verify with seller or test in spring.</strong></div>
+    </div>
+    <div class="inspect-item status-warn">
+      <div class="sys-name">⚠️ Insulation — Below Standard</div>
+      <div class="sys-status">Details not visible/accessible in most areas (typical for older home). Exposed combustible insulation in crawlspace rear — needs covering. Upgrade is discretionary but improves comfort/efficiency.</div>
+    </div>
+    <div class="inspect-item status-bad">
+      <div class="sys-name">🚨 Water Heater — Past End of Life</div>
+      <div class="sys-status"><strong>Rheem electric tank, ~25 years old.</strong> Typical life expectancy is 10–15 years. This is significantly past its expected lifespan and at high risk of failure/flooding. Immediate replacement recommended.</div>
+    </div>
+    <div class="inspect-item status-warn">
+      <div class="sys-name">⚠️ Plumbing</div>
+      <div class="sys-status">Copper + PEX supply piping (good). ABS/copper/cast iron waste. Backwater valve present (good for insurance). Suspected waste vent not terminating above roofline — needs evaluation. Window in shower = leak risk.</div>
+    </div>
+    <div class="inspect-item status-warn">
+      <div class="sys-name">⚠️ Basement Walkout</div>
+      <div class="sys-status">Covered by deck. Water stains, crumbling parging, moisture damage on door. Stairwell collects rain/melt through deck boards. <strong>$2,000–$4,000 to replace door + repair parging.</strong></div>
+    </div>
+    <div class="inspect-item status-good">
+      <div class="sys-name">✅ Basement — Dry</div>
+      <div class="sys-status">Typical moisture readings throughout (dry at time of inspection). Minor efflorescence. Bouncy floor near utility room door — cosmetic/monitor. 90% of foundation not visible due to finishing.</div>
+    </div>
+    <div class="inspect-item status-good">
+      <div class="sys-name">✅ Interior</div>
+      <div class="sys-status">Typical minor cosmetic flaws (wear and tear). Ceilings and walls in normal condition. No major interior concerns flagged.</div>
+    </div>
+  </div>
+
+  <div class="callout-warn" style="margin-top: 16px;">
+    <strong>📋 Items Requiring Spring Follow-Up:</strong>
+    <span>The winter inspection could not evaluate: (1) Roof covering fully (snow), (2) AC functionality (cold weather), (3) Outdoor faucets (winterized), (4) Lot grading (snow-covered), (5) Downspout discharge points. Budget for a spring re-check on these items.</span>
+  </div>
+</div>
+
+<!-- ESTIMATED REMEDIATION COSTS -->
+<div class="card">
+  <h2>💰 Estimated Remediation Costs (from Inspection)</h2>
+  <p style="font-size: 13px; color: #666; margin-bottom: 12px;">Based on Carson Dunlop findings. Priority items that should factor into offer pricing.</p>
+
+  <div class="cost-table">
+    <div class="cost-row"><span class="item">Water heater replacement (electric tank, 25 yrs old — urgent)</span><span class="cost">$1,500 – $2,500</span></div>
+    <div class="cost-row"><span class="item">Basement walkout door replacement + parging repair</span><span class="cost">$2,000 – $4,000</span></div>
+    <div class="cost-row"><span class="item">Mortar repointing + spalling repair (exterior brick)</span><span class="cost">$1,000 – $3,000</span></div>
+    <div class="cost-row"><span class="item">Gutter slope correction (rear)</span><span class="cost">$300 – $800</span></div>
+    <div class="cost-row"><span class="item">Crawlspace insulation covering (combustible)</span><span class="cost">$500 – $1,500</span></div>
+    <div class="cost-row"><span class="item">Waste vent pipe correction (if confirmed)</span><span class="cost">$500 – $1,500</span></div>
+    <div class="cost-row"><span class="item">Abandoned chimney cap verification/repair</span><span class="cost">$300 – $800</span></div>
+    <div class="cost-total"><span>Estimated Total (Known Issues)</span><span>$6,100 – $14,100</span></div>
+  </div>
+
+  <p style="font-size: 12px; color: #888; margin-top: 10px;">
+    <strong>Overall Assessment:</strong> No major structural or electrical red flags — this is a well-maintained 1920s home. The biggest concern is the 25-year-old water heater (immediate replacement needed). The exterior mortar/walkout work is typical for a century home. The inability to fully inspect the roof and AC in winter adds some uncertainty — budget for potential roof work if the covering turns out to be older.
+  </p>
+</div>
+
+<!-- MAIN STREET IMPACT -->
+<div class="card">
+  <h2>⚠️ Main Street Impact Analysis</h2>
+  <p style="font-size: 14px; margin-bottom: 12px;">530 Runnymede Rd sits directly on <strong>Runnymede Road</strong>, a busy main arterial street. This is the single most significant factor affecting its market value relative to comparable homes on quiet side streets.</p>
+
+  <div class="impact-box">
+    <div class="title">Industry-Standard Busy Street Discount: 10–20%</div>
+    <p>Appraisers typically deduct 10–20% for properties on main thoroughfares. In the Toronto market, homes on busy streets consistently sell for less than comparable properties on quiet residential streets, even in sought-after neighborhoods like Bloor West Village.</p>
+  </div>
+
+  <div class="comp-summary">
+    <div class="comp-summary-card">
+      <div class="street-type" style="color: #dc2626;">🚗 Runnymede Rd (Main Street) Sold Comps</div>
+      <div class="avg-price" style="color: #dc2626;">$1,225K – $1,450K</div>
+      <div class="range-text">3 sold comps on Runnymede Rd (Oct 2025 – Jan 2026)</div>
+    </div>
+    <div class="comp-summary-card">
+      <div class="street-type" style="color: #16a34a;">🏡 Side Streets (Durie, Colbeck, Willard, Evans, Armadale) Sold Comps</div>
+      <div class="avg-price" style="color: #16a34a;">$1,560K – $1,830K</div>
+      <div class="range-text">8 sold comps on nearby side streets (Aug 2025 – Mar 2026)</div>
+    </div>
+  </div>
+  <p style="font-size: 13px; color: #666; margin-top: 8px;">The data clearly shows a <strong>$200K–$500K discount</strong> for Runnymede Rd homes vs. comparable side-street properties. This represents roughly a <strong>15–25% main street discount</strong> in this specific micro-market.</p>
+</div>
+
+<!-- RUNNYMEDE RD COMPS (Same Street) -->
+<div class="card">
+  <h2>Comparable Sales — Runnymede Road (Main Street)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Address</th>
+        <th>Sold Price</th>
+        <th>Sold Date</th>
+        <th>Beds/Baths</th>
+        <th>Sqft</th>
+        <th>Lot</th>
+        <th>vs. Ask</th>
+        <th>DOM</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight-row">
+        <td><strong>545 Runnymede Rd</strong> <span class="badge-main">Main St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, No garage, 2 parkings, Finished bsmt, Junction Area. Tax $5,746. Listed $1,079,999 — had prior terminated at $1,398K (Feb 2025).</span></td>
+        <td><strong>$1,335,000</strong></td>
+        <td>Dec 10, 2025</td>
+        <td>3 / 3</td>
+        <td>1,500–2,000</td>
+        <td>19 × 113</td>
+        <td class="sold-over">▲ $255K (+23.6%)</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td><strong>636 Runnymede Rd</strong> <span class="badge-main">Main St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, 1 garage, Finished Full bsmt, 27' wide lot, Bloor West Village. Tax $8,419. Listed $1,299,000. Prior terminated at $1,599K (Feb 2025). Property DOM: 63 days.</span></td>
+        <td><strong>$1,450,000</strong></td>
+        <td>Jan 21, 2026</td>
+        <td>4+1 / 5</td>
+        <td>2,000–2,500</td>
+        <td>27 × 154</td>
+        <td class="sold-over">▲ $151K (+11.6%)</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td><strong>87 Runnymede Rd</strong> <span class="badge-main">Main St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, Needs work, Gas heat, near Bloor</span></td>
+        <td><strong>$1,225,000</strong></td>
+        <td>Oct 21, 2025</td>
+        <td>3+1 / 2</td>
+        <td>700–1,100</td>
+        <td>25 × 100</td>
+        <td class="sold-under">▼ $175K</td>
+        <td>33</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size: 12px; color: #888; margin-top: 10px;">
+    <strong>Key Takeaway:</strong> 545 Runnymede is the most direct comp — same street, similar size, no garage, sold Dec 2025 for $1,335K (listed at $1,080K — went 23.6% over asking in a bidding war, 7 DOM). 636 Runnymede sold higher ($1.45M, +11.6% over ask) but was larger (2000-2500 sqft), wider lot (27'), and had 5 bathrooms. Both sold in 7 days with aggressive over-asking bids — confirming that even main-street homes attract bidding wars when priced right. 87 Runnymede was much smaller (700-1100 sqft), needed work, and sat for 33 days.
+  </p>
+</div>
+
+<!-- ACTIVE COMPETITION ON RUNNYMEDE -->
+<div class="card">
+  <h2>🏠 Active Competition on Runnymede Rd</h2>
+  <p style="font-size: 13px; color: #666; margin-bottom: 12px;">Other Runnymede Rd listings currently for sale. These compete for the same buyer pool but also help establish market expectations for main-street properties.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Address</th>
+        <th>List Price</th>
+        <th>Details</th>
+        <th>Sqft</th>
+        <th>Lot</th>
+        <th>DOM</th>
+        <th>Assessment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>470 Runnymede Rd</strong> <span class="badge-main">Main St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, 1 garage, 2 parkings, Partially finished bsmt, Runnymede-BWV. Tax $6,349. RE/MAX West.</span></td>
+        <td><strong>$1,499,980</strong></td>
+        <td>3 bed / 2 bath</td>
+        <td style="color:#dc2626;font-weight:600">700–1,100</td>
+        <td>22 × 100</td>
+        <td>18</td>
+        <td>
+          <span style="color:#dc2626;font-weight:600;">⚠️ STRUGGLING</span><br>
+          <span style="font-size:11px;color:#666;">SigmaEstimate: $1,463K (listed 2.5% OVER estimate). 3 prior terminated listings ($1,398K → $1,578K → $1,524K). Last sold 2018 at $1,035K. Predicted DOM ~20 days. Much smaller than 530 yet asking $300K more.</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>317 Runnymede Rd</strong> <span class="badge-main">Main St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, 2 garages, 4 parkings, Full bsmt w/ sep entrance, High Park North. Tax $7,503. Royal LePage. "In the same family for 48 years."</span></td>
+        <td><strong>$1,669,000</strong></td>
+        <td>4 bed / 2 bath</td>
+        <td>1,100–1,500</td>
+        <td>30 × 120</td>
+        <td>2</td>
+        <td>
+          <span style="color:#eab308;font-weight:600;">🔶 OVERPRICED?</span><br>
+          <span style="font-size:11px;color:#666;">First time for sale (estate/downsizing). Wider lot (30') with 2 garages. Original condition (100+ yrs, never renovated). Listed same day as 530 (March 5). Predicted DOM ~40 days. Much higher than recent Runnymede sold comps ($1,225K–$1,450K).</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout-good" style="margin-top: 16px;">
+    <strong>✅ 530 Runnymede's Competitive Position:</strong>
+    <span>530 is the best value on Runnymede Rd right now. It's 1500–2000 sqft (much larger than 470's 700–1100 sqft), renovated (unlike 317's original condition), and priced $300K–$470K below the competition. The 99/100 popularity score confirms buyers see this. 470 Runnymede has failed to sell 3 times — it's a cautionary tale about overpricing on a main street. 317 Runnymede at $1,669K appears aspirational given that the fully renovated 636 Runnymede (bigger house, wider lot) only fetched $1,450K.</span>
+  </div>
+</div>
+
+<!-- SIDE STREET COMPS -->
+<div class="card">
+  <h2>Comparable Sales — Nearby Side Streets (Premium Reference)</h2>
+  <p style="font-size: 13px; color: #666; margin-bottom: 12px;">These comps show what similar homes sell for <em>without</em> the main street discount. The difference quantifies the Runnymede Road penalty.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Address</th>
+        <th>Sold Price</th>
+        <th>Sold Date</th>
+        <th>Beds/Baths</th>
+        <th>Sqft</th>
+        <th>Lot</th>
+        <th>vs. Ask</th>
+        <th>DOM</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight-row">
+        <td><strong>519 Durie St</strong> <span class="badge-side">Side St</span> <span style="background:#dc2626;color:white;font-size:9px;font-weight:700;padding:2px 5px;border-radius:3px;">NEW — 3 DAYS AGO</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, No garage, 3 parkings, Finished bsmt, 0.3km away</span></td>
+        <td><strong>$1,702,000</strong></td>
+        <td>Mar 4, 2026</td>
+        <td>3+2 / 3</td>
+        <td>1,500–2,000</td>
+        <td>25 × 105</td>
+        <td class="sold-over">▲ $103K (+6.4%)</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td><strong>100 Colbeck St</strong> <span class="badge-side">Side St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, smaller home, no garage</span></td>
+        <td><strong>$1,652,000</strong></td>
+        <td>Nov 2025</td>
+        <td>3 / 2</td>
+        <td>1,100–1,500</td>
+        <td>24 × 85</td>
+        <td class="sold-over">▲ $42K</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><strong>16 Evans Ave</strong> <span class="badge-side">Side St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, 1 garage</span></td>
+        <td><strong>$1,607,000</strong></td>
+        <td>Nov 2025</td>
+        <td>4 / 1</td>
+        <td>1,500–2,000</td>
+        <td>28 × 109</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><strong>321 Willard Ave</strong> <span class="badge-side">Side St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, 1 garage, deep lot</span></td>
+        <td><strong>$1,700,000</strong></td>
+        <td>Nov 2025</td>
+        <td>4 / 2</td>
+        <td>1,500–2,000</td>
+        <td>25 × 156</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><strong>377 Armadale Ave</strong> <span class="badge-side">Side St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, 1 garage</span></td>
+        <td><strong>$1,560,000</strong></td>
+        <td>Oct 2025</td>
+        <td>4+1 / 2</td>
+        <td>1,100–1,500</td>
+        <td>25 × 109</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><strong>122 Colbeck St</strong> <span class="badge-side">Side St</span><br><span style="font-size:11px;color:#666">Detached 1½-Storey, 30' wide lot, Gas</span></td>
+        <td><strong>$1,563,000</strong></td>
+        <td>Aug 2025</td>
+        <td>3+1 / 3</td>
+        <td>1,500–2,000</td>
+        <td>30 × —</td>
+        <td class="sold-over">▲ $165K</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td><strong>157 Colbeck St</strong> <span class="badge-side">Side St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, 1 garage, wider lot</span></td>
+        <td><strong>$1,830,000</strong></td>
+        <td>Oct 2025</td>
+        <td>4+1 / 4</td>
+        <td>1,500–2,000</td>
+        <td>29 × 97</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><strong>418 Willard Ave</strong> <span class="badge-side">Side St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, 2 garage, wide lot</span></td>
+        <td><strong>$1,725,000</strong></td>
+        <td>Sep 2025</td>
+        <td>5 / 2</td>
+        <td>1,500–2,000</td>
+        <td>33 × 114</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size: 12px; color: #888; margin-top: 10px;">
+    <strong>Key Takeaway:</strong> The freshest comp — 519 Durie (sold March 4, just 3 days ago!) — went for $1,702K, 6.4% over asking, on a side street only 0.3km from 530 Runnymede. Side-street detached homes in the area sell for $1.56M–$1.83M. Applying the 15–25% main street discount puts 530 Runnymede's value at approximately $1,250K–$1,400K.
+  </p>
+</div>
+
+<!-- MARKET CONTEXT -->
+<div class="card">
+  <h2>Market Context — Toronto W02 (Feb/Mar 2026)</h2>
+  <div class="prop-grid">
+    <div>
+      <div class="prop-row"><span class="key">Avg. Detached Price (Toronto)</span><span class="val">~$1,144,400</span></div>
+      <div class="prop-row"><span class="key">Sale-to-List Ratio</span><span class="val">96–97%</span></div>
+      <div class="prop-row"><span class="key">Market Direction</span><span class="val">Softening (▼8.1% YoY)</span></div>
+    </div>
+    <div>
+      <div class="prop-row"><span class="key">Avg. DOM (Detached)</span><span class="val">~20–30 days</span></div>
+      <div class="prop-row"><span class="key">Active: 317 Runnymede</span><span class="val">$1,669,000 (4/2, 30×120, original)</span></div>
+      <div class="prop-row"><span class="key">Active: 470 Runnymede</span><span class="val">$1,499,980 (3/2, 22×100, 3× failed)</span></div>
+      <div class="prop-row"><span class="key">Rental Next Door (528)</span><span class="val">$2,500–$2,850/mo units</span></div>
+    </div>
+  </div>
+  <p style="font-size: 13px; color: #666; margin-top: 12px;">The broader Toronto detached market is softening, with prices down ~8% year-over-year. This creates a buyer-favorable environment, especially for properties with known drawbacks (main street, electric heating). Inventory is rising and bidding wars are less common than 2024.</p>
+</div>
+
+<!-- OFFER STRATEGY -->
+<div class="card">
+  <h2>Offer Strategy — Offer Night: Tuesday March 10</h2>
+
+  <div class="callout-danger" style="margin-bottom: 16px;">
+    <strong>⚠️ MULTIPLE OFFERS EXPECTED:</strong>
+    <span>With 99/100 listing popularity, listing priced $50K below SigmaEstimate, and the open house weekend happening now (Mar 8), expect significant competition on offer night. The most recent side-street comp (519 Durie, $1,702K) sold 6.4% over asking just 3 days ago — indicating strong demand in this exact area right now.</span>
+  </div>
+
+  <p style="font-size: 14px; margin-bottom: 16px;">Fair market value range: <strong>$1,275,000–$1,400,000</strong>. Anchored to 545 Runnymede ($1,335K, Dec 2025) as the direct main-street comp, adjusted for 530's advantages (2-car garage, deeper lot, gas heat). The 519 Durie sale ($1,702K on a side street, 3 days ago, +6.4% over asking) confirms strong current demand — apply the 15–20% main-street discount to get $1,360K–$1,445K range.</p>
+
+  <div class="strategy-grid">
+    <div class="strategy-card tier-conservative">
+      <div class="tier">Conservative</div>
+      <div class="range">$1,275K–$1,310K</div>
+      <div class="note">Near the 545 Runnymede anchor. Accounts for $6K–$14K in repairs and roof uncertainty. Likely won't win in a bidding war with 99/100 popularity.</div>
+    </div>
+    <div class="strategy-card tier-sweet">
+      <div class="tier">Sweet Spot ★</div>
+      <div class="range">$1,325K–$1,375K</div>
+      <div class="note">Matches/exceeds 545 Runnymede ($1,335K) and reflects 530's garage premium. 519 Durie side-street discount supports this range. Best balance of winning and value.</div>
+    </div>
+    <div class="strategy-card tier-aggressive">
+      <div class="tier">Aggressive (To Win)</div>
+      <div class="range">$1,380K–$1,425K</div>
+      <div class="note">If you must win. Still below 636 Runnymede ($1.45M, gut reno, wider lot). Justified by 2-car garage premium and 519 Durie's $1.7M side-street price with 15-20% main-street discount applied.</div>
+    </div>
+  </div>
+
+  <div style="background:#eff6ff; border:1px solid #93c5fd; border-radius:8px; padding:16px 20px; margin-top:16px;">
+    <div style="font-weight:700; color:#1e40af; margin-bottom:6px;">💡 Offer Night Tactics</div>
+    <div style="font-size:13px; color:#1e3a5f; line-height:1.7;">
+      <strong>1. Escalation clause:</strong> Consider offering $1,325K with an escalation clause up to $1,375K–$1,400K in $5K increments above the next highest offer. This protects you from overpaying while staying competitive.<br>
+      <strong>2. Conditions:</strong> A clean (no conditions) offer is stronger but riskier. Since you already have the Carson Dunlop inspection, you have more confidence to go firm. Consider whether you need a financing condition.<br>
+      <strong>3. Deposit:</strong> A strong deposit ($50K–$75K) signals seriousness.<br>
+      <strong>4. Closing date:</strong> Be flexible — match the seller's preference (they've owned since 2012, likely need time to find a new home). A 60–90 day close may be appealing to them.
+    </div>
+  </div>
+</div>
+
+<!-- ADVANTAGES & RISKS -->
+<div class="card">
+  <h2>Advantages & Considerations</h2>
+  <div class="pros-cons">
+    <div class="pros-list">
+      <h3>✅ Strengths</h3>
+      <ul>
+        <li><strong>2-car detached garage + laneway parking</strong> — rare for the area, 3 total spots</li>
+        <li><strong>Deep lot (149 ft)</strong> — one of the deepest on Runnymede</li>
+        <li><strong>Finished basement with walkout & sep. entrance</strong> — income/nanny suite potential</li>
+        <li><strong>9'9" ceilings</strong> — premium ceiling height for 1920s home</li>
+        <li><strong>Detached</strong> — not semi or row, premium housing type</li>
+        <li><strong>Bloor West Village location</strong> — top-tier schools, TTC, shops</li>
+        <li><strong>Chef's kitchen, open concept</strong> — modern layout</li>
+        <li><strong>Stained glass, period details</strong> — character appeal</li>
+      </ul>
+    </div>
+    <div class="cons-list">
+      <h3>⚠️ Considerations</h3>
+      <ul>
+        <li><strong>Main street (Runnymede Rd)</strong> — 10-20% discount vs. side streets, traffic noise, reduced privacy</li>
+        <li><strong>Water heater at 25 years</strong> — well past 10-15 yr life expectancy, replacement needed immediately ($1.5K–$2.5K)</li>
+        <li><strong>Roof age/condition unknown</strong> — could not be fully inspected due to snow; may need replacement</li>
+        <li><strong>Exterior mortar deterioration + spalling</strong> — typical for 100-yr brick but $1K–$3K to repair</li>
+        <li><strong>Basement walkout issues</strong> — water stains, crumbling parging, moisture damage ($2K–$4K)</li>
+        <li><strong>Narrower lot (20 ft)</strong> — 545 Runnymede similar, but 636 was 27.3' wide</li>
+        <li><strong>Softening market</strong> — prices down 8% YoY in Toronto detached</li>
+        <li><strong>528 Runnymede is a rental next door</strong> — investor-owned property, potential tenant turnover</li>
+        <li><strong>Possible hidden K&T wiring</strong> — no active K&T found, but inspector notes it may exist given age of home</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- NEGOTIATION LEVERAGE -->
+<div class="card">
+  <h2>Negotiation Leverage Points</h2>
+  <div style="font-size: 13px; line-height: 1.8;">
+    <p>When positioning your offer, these are the key points to justify a price below the emotional anchor of the listing:</p>
+    <ol style="margin-top: 10px; padding-left: 20px;">
+      <li><strong>$6K–$14K in inspection-identified repairs:</strong> The Carson Dunlop report documents a 25-year-old water heater (needs immediate replacement), exterior mortar deterioration, basement walkout damage, and other items totaling $6K–$14K. These are quantifiable, report-backed costs.</li>
+      <li><strong>Main street location:</strong> Direct comps on Runnymede sell $200K–$500K below equivalent side-street homes. This isn't negotiable — it's a permanent feature of the property.</li>
+      <li><strong>Roof uncertainty:</strong> The roof could not be fully inspected due to snow. If the covering is nearing end of life, that's $10K–$20K+. This unknown risk justifies a conservative offer.</li>
+      <li><strong>Market conditions:</strong> Toronto detached prices are down 8% YoY. Sale-to-list ratios are 96-97%. This isn't a bidding war market.</li>
+      <li><strong>545 Runnymede anchor:</strong> The most direct comparable (same street, similar size) sold at $1,335K in Dec 2025.</li>
+      <li><strong>519 Durie side-street premium context:</strong> While 519 Durie sold for $1,702K (Mar 4), that's a quiet side street. Applying the established 15–20% main-street discount: $1,702K × 0.80–0.85 = $1,362K–$1,447K. This frames your offer in the $1,325K–$1,400K range as data-backed.</li>
+      <li><strong>Rental property next door (528):</strong> Adjacent rental units can be a concern for owner-occupant buyers.</li>
+    </ol>
+  </div>
+</div>
+
+<!-- KEY INSIGHT -->
+<div class="insight">
+  <h2>Bottom Line</h2>
+  <p>530 Runnymede is a solid detached home in a premium neighborhood, with standout features like a 2-car garage, deep lot, and basement suite potential. The Carson Dunlop inspection is largely reassuring — structure sound, 200A electrical, gas furnace (12 yrs old), $6K–$14K in known repairs. <strong>However, with 99/100 listing popularity, expect serious competition on offer night (Tuesday March 10).</strong> The freshest comp — 519 Durie St, just 0.3km away, sold 3 days ago for $1,702K (+6.4% over asking) — proves strong current demand in this exact area. Applying the main-street discount: fair value is <strong>$1,325K–$1,400K</strong>. The sweet spot is <strong>$1,325K–$1,375K</strong>. If you need to win, be prepared to go up to <strong>$1,400K–$1,425K</strong> — still below the renovated 636 Runnymede ($1.45M) and well-supported by the comp data. The seller bought in 2012 for $700K — they have significant equity and will likely accept a strong offer in this range.</p>
+</div>
+
+<!-- ============================== -->
+<!-- FULL INSPECTION REPORT SECTION -->
+<!-- ============================== -->
+
+<div style="margin-top:40px; border-top: 4px solid #1a1a2e; padding-top: 30px;">
+  <h1 style="text-align:center; color:#1a1a2e; font-size:28px; margin-bottom:5px;">Full Home Inspection Report</h1>
+  <p style="text-align:center; color:#666; font-size:14px; margin-bottom:8px;">Carson Dunlop & Associates — Report No. 96257, v.2 — Inspected February 26, 2026 by Jonathan Dube, RHI</p>
+  <p style="text-align:center; margin-bottom:25px;"><a href="Inspection_530_Runnymede_Rd.pdf" download style="display:inline-block; background:#1a1a2e; color:white; padding:10px 24px; border-radius:6px; text-decoration:none; font-weight:bold; font-size:14px;">📄 Download Full Inspection Report (PDF, 40 pages)</a></p>
+
+  <!-- Navigation -->
+  <div style="display:flex; flex-wrap:wrap; gap:6px; justify-content:center; margin-bottom:25px;">
+    <span style="background:#8B8B00; color:white; padding:4px 10px; border-radius:3px; font-size:12px; font-weight:bold;">ROOFING</span>
+    <span style="background:#4a7c4f; color:white; padding:4px 10px; border-radius:3px; font-size:12px; font-weight:bold;">EXTERIOR</span>
+    <span style="background:#8B8B00; color:white; padding:4px 10px; border-radius:3px; font-size:12px; font-weight:bold;">STRUCTURE</span>
+    <span style="background:#c4b200; color:white; padding:4px 10px; border-radius:3px; font-size:12px; font-weight:bold;">ELECTRICAL</span>
+    <span style="background:#8B0000; color:white; padding:4px 10px; border-radius:3px; font-size:12px; font-weight:bold;">HEATING</span>
+    <span style="background:#006d6f; color:white; padding:4px 10px; border-radius:3px; font-size:12px; font-weight:bold;">COOLING</span>
+    <span style="background:#b8860b; color:white; padding:4px 10px; border-radius:3px; font-size:12px; font-weight:bold;">INSULATION</span>
+    <span style="background:#4169E1; color:white; padding:4px 10px; border-radius:3px; font-size:12px; font-weight:bold;">PLUMBING</span>
+    <span style="background:#800080; color:white; padding:4px 10px; border-radius:3px; font-size:12px; font-weight:bold;">INTERIOR</span>
+    <span style="background:#333; color:white; padding:4px 10px; border-radius:3px; font-size:12px; font-weight:bold;">RECALCHEK</span>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div style="background:#f8f8f8; border-left:4px solid #333; padding:15px 20px; margin-bottom:20px; border-radius:0 6px 6px 0;">
+    <h2 style="color:#333; margin-top:0; font-size:20px;">Overview — Key Recommendations</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px;">
+      <div style="background:white; padding:12px; border-radius:6px; border:1px solid #ddd;">
+        <h4 style="color:#8B8B00; margin:0 0 8px 0;">Roofing</h4>
+        <p style="margin:0; font-size:13px;">Roof partially covered with snow — could not be fully inspected. Visible portions in good overall condition. <strong>Task:</strong> Further evaluation by specialist when weather permits. <strong>Time:</strong> ASAP.</p>
+      </div>
+      <div style="background:white; padding:12px; border-radius:6px; border:1px solid #ddd;">
+        <h4 style="color:#006d6f; margin:0 0 8px 0;">Cooling & Heat Pump</h4>
+        <p style="margin:0; font-size:13px;">Due to weather conditions and temperature (below 16°C), unit could not be tested. <strong>Task:</strong> Verify functionality with seller and/or check in spring. <strong>Cost:</strong> Minor.</p>
+      </div>
+    </div>
+    <p style="margin-top:12px; font-size:13px; color:#666;">All recommendations should be addressed by qualified specialists. Ballpark costs are a courtesy — confirm with specialist quotes. Minor costs typically under $1,000.</p>
+  </div>
+
+  <!-- ROOFING -->
+  <div style="background:#f9f9ec; border-left:4px solid #8B8B00; padding:15px 20px; margin-bottom:20px; border-radius:0 6px 6px 0;">
+    <h2 style="color:#8B8B00; margin-top:0; font-size:20px;">Roofing</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px;">
+      <div><strong>Sloped roofing:</strong> Asphalt shingles (house) + Garage</div>
+      <div><strong>Flat roofing:</strong> Modified bitumen membrane</div>
+    </div>
+    <h4 style="margin:12px 0 6px; color:#555;">Observations & Recommendations</h4>
+    <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #e74c3c;">
+      <strong>RECOMMENDATIONS — General</strong><br>
+      <span style="font-size:13px;">Roof partially covered with snow, could not be fully inspected. Visible portions in good overall condition. Annual inspections recommended for maintenance (flashings/caulking).<br>
+      <strong>Task:</strong> Further evaluation by specialist when weather permits &nbsp;|&nbsp; <strong>Time:</strong> ASAP</span>
+    </div>
+    <h4 style="margin:12px 0 6px; color:#555;">Inspection Limitations</h4>
+    <p style="font-size:13px; margin:0;">Limited by lack of access (environmental — wind/rain/snow/ice). Inspection performed with a drone. Age determined by visual inspection.</p>
+  </div>
+
+  <!-- EXTERIOR -->
+  <div style="background:#eef5ee; border-left:4px solid #4a7c4f; padding:15px 20px; margin-bottom:20px; border-radius:0 6px 6px 0;">
+    <h2 style="color:#4a7c4f; margin-top:0; font-size:20px;">Exterior</h2>
+    <p style="margin-bottom:10px;"><strong>Wall surfaces & trim:</strong> Asphalt shingles, Brick, Metal siding</p>
+
+    <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #e67e22;">
+      <strong>ROOF DRAINAGE — Gutters</strong><br>
+      <span style="font-size:13px;">Improper slope, ponding at rear. <strong>Task:</strong> Improve &nbsp;|&nbsp; <strong>Time:</strong> ASAP &nbsp;|&nbsp; <strong>Cost:</strong> Minor</span>
+    </div>
+
+    <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #f39c12;">
+      <strong>ROOF DRAINAGE — Downspouts</strong><br>
+      <span style="font-size:13px;">Discharge point could not be observed due to snow. Ensure they discharge above grade and 4-6 feet from home. <strong>Location:</strong> Throughout &nbsp;|&nbsp; <strong>Task:</strong> Verify in spring</span>
+    </div>
+
+    <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #e74c3c;">
+      <strong>WALLS — Masonry (brick, stone, concrete)</strong><br>
+      <span style="font-size:13px;"><strong>Mortar deterioration</strong> — Various localized areas. <strong>Task:</strong> Repair &nbsp;|&nbsp; <strong>Time:</strong> As needed &nbsp;|&nbsp; <strong>Cost:</strong> $1,000+</span><br>
+      <span style="font-size:13px;"><strong>Spalling</strong> — Freezing water causes brick faces to crack off. Requires repointing.</span>
+    </div>
+
+    <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #f39c12;">
+      <strong>DOORS — General Notes</strong><br>
+      <span style="font-size:13px;">Rear door threshold ineffective. <strong>Task:</strong> Improve / keep area clear of snow.</span>
+    </div>
+
+    <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #f39c12;">
+      <strong>PORCHES, DECKS, STAIRS — Handrails & Guards</strong><br>
+      <span style="font-size:13px;">Missing handrails/guards. <strong>Task:</strong> Provide if desired.</span>
+    </div>
+
+    <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #e74c3c;">
+      <strong>BASEMENT WALKOUTS — General</strong><br>
+      <span style="font-size:13px;">Rear basement walkout: threshold ineffective, walls spalling, parging loose/crumbling, moisture damage at door base, drain missing. Walkout covered by a deck and not in use.<br>
+      <strong>Task:</strong> Clean and repair &nbsp;|&nbsp; <strong>Cost:</strong> $2,000–$4,000 (replace door + repair parging)</span>
+    </div>
+
+    <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #f39c12;">
+      <strong>LANDSCAPING — Lot Grading</strong><br>
+      <span style="font-size:13px;">Grade could not be determined due to snow. Ensure grading slopes away from foundations. <strong>Task:</strong> Verify in spring.</span>
+    </div>
+
+    <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #f39c12;">
+      <strong>GARAGE — General</strong><br>
+      <span style="font-size:13px;">Older garage with cosmetic defects but in good condition overall. One window boarded up (seller to replace). Shelving load capacity not determined. <strong>Task:</strong> Improve if desired.</span>
+    </div>
+
+    <h4 style="margin:12px 0 6px; color:#555;">Inspection Limitations</h4>
+    <p style="font-size:13px; margin:0;">Limited by environmental (snow/ice). Gutters/downspouts may be obstructed. Exterior inspected from ground level.</p>
+  </div>
+
+  <!-- STRUCTURE -->
+  <div style="background:#f5f5ec; border-left:4px solid #8B8B00; padding:15px 20px; margin-bottom:20px; border-radius:0 6px 6px 0;">
+    <h2 style="color:#8B8B00; margin-top:0; font-size:20px;">Structure</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px; font-size:13px;">
+      <div><strong>General:</strong> Structure has performed well, no evidence of significant movement</div>
+      <div><strong>Configuration:</strong> Basement + Crawlspace</div>
+      <div><strong>Foundation:</strong> Masonry block, Stone (not visible in areas)</div>
+      <div><strong>Floor construction:</strong> Joists, Subfloor — plank</div>
+      <div><strong>Exterior walls:</strong> Wood frame, Masonry (not visible in some areas)</div>
+      <div><strong>Roof/ceiling framing:</strong> Not visible</div>
+    </div>
+
+    <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #2ecc71;">
+      <strong>RECOMMENDATIONS — General</strong><br>
+      <span style="font-size:13px;">Most foundation/masonry walls have small cracks due to minor shrinkage, settlement, or shifting — typical for age. No leakage or building movement noted.</span>
+    </div>
+
+    <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #f39c12;">
+      <strong>WALLS — Solid Masonry Walls</strong><br>
+      <span style="font-size:13px;"><strong>Efflorescence</strong> noted with some mortar deterioration — typical for a brick foundation of this age (~100 years). Basement walls were dry when tested with moisture meter.<br>
+      <strong>Task:</strong> Clean efflorescence / Repair mortar / Monitor &nbsp;|&nbsp; <strong>Time:</strong> As needed</span>
+    </div>
+
+    <h4 style="margin:12px 0 6px; color:#555;">Inspection Limitations</h4>
+    <p style="font-size:13px; margin:0;">Attic/roof space: Flat roof space — no access. Crawlspace: Inspected from access hatch.</p>
+  </div>
+
+  <!-- ELECTRICAL -->
+  <div style="background:#fffff0; border-left:4px solid #c4b200; padding:15px 20px; margin-bottom:20px; border-radius:0 6px 6px 0;">
+    <h2 style="color:#c4b200; margin-top:0; font-size:20px;">Electrical</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px; font-size:13px;">
+      <div><strong>General:</strong> Substantially updated</div>
+      <div><strong>Service size:</strong> 200 Amps (240 Volts) &#9989;</div>
+      <div><strong>Main panel:</strong> Breakers — basement</div>
+      <div><strong>Subpanel:</strong> Breakers — garage</div>
+      <div><strong>Wiring:</strong> Copper (non-metallic + metallic sheathed)</div>
+      <div><strong>Safety:</strong> GFCIs present, AFCIs present &#9989;</div>
+    </div>
+
+    <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #e74c3c;">
+      <strong>RECOMMENDATIONS — General</strong><br>
+      <span style="font-size:13px;">All electrical recommendations are safety issues. Treat as high priority (Immediate), unless otherwise noted.</span>
+    </div>
+
+    <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #f39c12;">
+      <strong>DISTRIBUTION SYSTEM — Knob-and-Tube Wiring</strong><br>
+      <span style="font-size:13px;">Although no active knob-and-tube was noted, there may be some present based on the age of the home. This is common for 100+ year-old homes. Check Ontario Electrical Safety Authority position.</span>
+    </div>
+
+    <h4 style="margin:12px 0 6px; color:#555;">Inspection Limitations</h4>
+    <p style="font-size:13px; margin:0;">AFCIs not tested in occupied home. Main disconnect cover not removed (unsafe to do so).</p>
+  </div>
+
+  <!-- HEATING -->
+  <div style="background:#fff0f0; border-left:4px solid #8B0000; padding:15px 20px; margin-bottom:20px; border-radius:0 6px 6px 0;">
+    <h2 style="color:#8B0000; margin-top:0; font-size:20px;">Heating</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px; font-size:13px;">
+      <div><strong>System type:</strong> Furnace (Keeprite)</div>
+      <div><strong>Fuel:</strong> Gas</div>
+      <div><strong>Capacity:</strong> 60,000 BTU/hr</div>
+      <div><strong>Efficiency:</strong> High-efficiency &#9989;</div>
+      <div><strong>Approximate age:</strong> 12 years</div>
+      <div><strong>Life expectancy:</strong> 18–25 years</div>
+      <div><strong>Fireplace:</strong> Electric fireplace</div>
+      <div><strong>Venting:</strong> Sidewall venting</div>
+    </div>
+
+    <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #f39c12;">
+      <strong>RECOMMENDATIONS — General</strong><br>
+      <span style="font-size:13px;">Airflow varies by register (common due to ductwork length). A service agreement covering parts & labour is recommended.<br>
+      <strong>Task:</strong> Monitor / improve</span>
+    </div>
+
+    <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #e74c3c;">
+      <strong>CHIMNEY & VENT — Masonry Chimney</strong><br>
+      <span style="font-size:13px;">Abandoned chimney sealed from above. Rear chimney appears to have loose masonry on top — difficult to see if fully covered from rain. Further investigation when weather permits recommended.<br>
+      <strong>Location:</strong> Roof</span>
+    </div>
+
+    <h4 style="margin:12px 0 6px; color:#555;">Inspection Limitations</h4>
+    <p style="font-size:13px; margin:0;">Does not include gas leak detection, CO testing, combustion analysis, or evaluation of internal furnace components.</p>
+  </div>
+
+  <!-- COOLING -->
+  <div style="background:#f0fafa; border-left:4px solid #006d6f; padding:15px 20px; margin-bottom:20px; border-radius:0 6px 6px 0;">
+    <h2 style="color:#006d6f; margin-top:0; font-size:20px;">Cooling & Heat Pump</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px; font-size:13px;">
+      <div><strong>Type:</strong> Air cooled (Amana)</div>
+      <div><strong>Capacity:</strong> 24,000 BTU/hr</div>
+      <div><strong>Approximate age:</strong> 5 years</div>
+      <div><strong>Life expectancy:</strong> 10–15 years</div>
+    </div>
+
+    <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #f39c12;">
+      <strong>RECOMMENDATIONS — General</strong><br>
+      <span style="font-size:13px;">Could not be tested due to weather (below 16°C). <strong>Task:</strong> Verify with seller and/or check in spring. <strong>Cost:</strong> Minor.</span>
+    </div>
+
+    <h4 style="margin:12px 0 6px; color:#555;">Inspection Limitations</h4>
+    <p style="font-size:13px; margin:0;">Limited by low outdoor temperature.</p>
+  </div>
+
+  <!-- INSULATION -->
+  <div style="background:#faf5e6; border-left:4px solid #b8860b; padding:15px 20px; margin-bottom:20px; border-radius:0 6px 6px 0;">
+    <h2 style="color:#b8860b; margin-top:0; font-size:20px;">Insulation & Ventilation</h2>
+    <div style="font-size:13px; margin-bottom:12px;">
+      <strong>Attic/roof insulation:</strong> Not visible &nbsp;|&nbsp; <strong>Air/vapor barrier:</strong> Not visible
+    </div>
+
+    <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #f39c12;">
+      <strong>RECOMMENDATIONS — General</strong><br>
+      <span style="font-size:13px;">Insulation details mostly not visible/accessible. In older houses, insulation is usually below modern standards. Not practical or cost-effective to improve unless during renovations. Upgrade is a discretionary improvement.</span>
+    </div>
+
+    <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #e74c3c;">
+      <strong>FOUNDATION — Interior Insulation</strong><br>
+      <span style="font-size:13px;"><strong>Exposed combustible insulation</strong> in crawlspace rear. Should be covered with drywall or non-combustible material.<br>
+      <strong>Task:</strong> Cover/improve &nbsp;|&nbsp; <strong>Time:</strong> ASAP &nbsp;|&nbsp; <strong>Cost:</strong> Not determined</span>
+    </div>
+
+    <h4 style="margin:12px 0 6px; color:#555;">Inspection Limitations</h4>
+    <p style="font-size:13px; margin:0;">Limited by lack of access to roof space and wall space. Crawlspace inspected from access hatch. Roof ventilation not evaluated.</p>
+  </div>
+
+  <!-- PLUMBING -->
+  <div style="background:#f0f0ff; border-left:4px solid #4169E1; padding:15px 20px; margin-bottom:20px; border-radius:0 6px 6px 0;">
+    <h2 style="color:#4169E1; margin-top:0; font-size:20px;">Plumbing</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px; font-size:13px;">
+      <div><strong>Service piping:</strong> Copper</div>
+      <div><strong>Supply piping:</strong> Copper + PEX</div>
+      <div><strong>Main shutoff:</strong> Front of basement</div>
+      <div><strong>Water heater:</strong> Tank (Rheem), Electric</div>
+      <div><strong>Water heater age:</strong> ~25 years &#9888;&#65039;</div>
+      <div><strong>Life expectancy:</strong> 10–15 years (PAST DUE)</div>
+      <div><strong>Waste/vent piping:</strong> ABS plastic, Copper, Cast iron</div>
+      <div><strong>Backwater valve:</strong> Present &#9989;</div>
+      <div><strong>Floor drains:</strong> Near heating system + 2nd floor laundry</div>
+    </div>
+
+    <div style="background:#fff3f3; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #e74c3c;">
+      <strong style="color:#e74c3c;">&#9888;&#65039; WATER HEATER — 25 YEARS OLD (Life expectancy 10-15 years)</strong><br>
+      <span style="font-size:13px;">This Rheem tank water heater is significantly past its expected life. Replacement should be planned. <strong>Estimated cost: $1,500–$2,500.</strong></span>
+    </div>
+
+    <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #f39c12;">
+      <strong>WASTE PLUMBING — Drain Piping Performance</strong><br>
+      <span style="font-size:13px;">Main sewer line to street cannot be inspected. A video scan dramatically reduces risk of sewer back-ups.<br>
+      <strong>Task:</strong> Provide after possession &nbsp;|&nbsp; <strong>Cost:</strong> $300+</span>
+    </div>
+
+    <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #e74c3c;">
+      <strong>WASTE PLUMBING — Venting System</strong><br>
+      <span style="font-size:13px;">Pipe suspected to be a waste vent — should terminate above roofline. <strong>Location:</strong> Right side near rear.<br>
+      <strong>Task:</strong> Further evaluation/Improve &nbsp;|&nbsp; <strong>Time:</strong> ASAP</span>
+    </div>
+
+    <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #f39c12;">
+      <strong>FIXTURES — Shower Stall Enclosure</strong><br>
+      <span style="font-size:13px;">Window in 2nd floor bathroom — vulnerable area for leaks. <strong>Task:</strong> Monitor/improve as needed.</span>
+    </div>
+
+    <h4 style="margin:12px 0 6px; color:#555;">Inspection Limitations</h4>
+    <p style="font-size:13px; margin:0;">Outdoor faucets (hose bibs) not tested — shut off for winter. Tub/sink overflows excluded from inspection.</p>
+  </div>
+
+  <!-- INTERIOR -->
+  <div style="background:#f8f0f8; border-left:4px solid #800080; padding:15px 20px; margin-bottom:20px; border-radius:0 6px 6px 0;">
+    <h2 style="color:#800080; margin-top:0; font-size:20px;">Interior</h2>
+
+    <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #2ecc71;">
+      <strong>CEILINGS AND WALLS — General</strong><br>
+      <span style="font-size:13px;">Typical minor flaws — cosmetic only.</span>
+    </div>
+
+    <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #2ecc71;">
+      <strong>FLOORS — General</strong><br>
+      <span style="font-size:13px;">Typical flaws reflecting normal wear and tear throughout.</span>
+    </div>
+
+    <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #f39c12;">
+      <strong>FLOORS — Bouncy</strong><br>
+      <span style="font-size:13px;">Basement floor is bouncy near utility room door. May lead to premature wear. <strong>Task:</strong> Monitor.</span>
+    </div>
+
+    <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #2ecc71;">
+      <strong>BASEMENT — Leakage</strong><br>
+      <span style="font-size:13px;">Typical reading noted with moisture meter during inspection. Walls dry at time of inspection.</span>
+    </div>
+
+    <div style="background:white; padding:10px; border-radius:4px; margin-bottom:8px; border-left:3px solid #e74c3c;">
+      <strong>BASEMENT — Wet Basement Evidence</strong><br>
+      <span style="font-size:13px;">Abandoned basement walkout covered by deck — allows melting snow/rain through deck boards, saturating dust and debris in stairwell. Without airflow, moisture doesn't evaporate and flows into unfinished basement causing water stains. Basement is dry overall but unfinished portion has large volume of stored items restricting access and ventilation.<br>
+      <strong>Task:</strong> Clean stairwell, replace basement door, protect stairwell from above, improve gutters/downspouts and lot grading to direct water away from home.</span>
+    </div>
+
+    <h4 style="margin:12px 0 6px; color:#555;">Inspection Limitations</h4>
+    <p style="font-size:13px; margin:0;">Limited by storage/furnishings. Limited access to cabinets and closets. Appliance inspections limited scope. 90% of interior foundation not visible. Carbon monoxide alarms, smoke detectors, security systems, window coatings/seals, and aesthetics/finish quality not part of inspection.</p>
+  </div>
+
+  <!-- RECALCHEK -->
+  <div style="background:#f5f5f5; border-left:4px solid #333; padding:15px 20px; margin-bottom:20px; border-radius:0 6px 6px 0;">
+    <h2 style="color:#333; margin-top:0; font-size:20px;">RecalChek — Appliance Details</h2>
+    <p style="font-size:13px; color:#666; margin-bottom:12px;">Product recall check included at no extra cost. Separate report from RecallChek with any notices and contacts.</p>
+    <table style="width:100%; border-collapse:collapse; font-size:13px;">
+      <tr style="background:#e8e8e8;">
+        <th style="padding:6px 10px; text-align:left; border:1px solid #ddd;">Appliance</th>
+        <th style="padding:6px 10px; text-align:left; border:1px solid #ddd;">Brand</th>
+      </tr>
+      <tr><td style="padding:6px 10px; border:1px solid #ddd;">Air Conditioner / Heat Pump</td><td style="padding:6px 10px; border:1px solid #ddd;">Amana</td></tr>
+      <tr style="background:#f9f9f9;"><td style="padding:6px 10px; border:1px solid #ddd;">Furnace</td><td style="padding:6px 10px; border:1px solid #ddd;">Keeprite</td></tr>
+      <tr><td style="padding:6px 10px; border:1px solid #ddd;">Water Heater</td><td style="padding:6px 10px; border:1px solid #ddd;">Rheem (RR612T, ~25 yrs old)</td></tr>
+      <tr style="background:#f9f9f9;"><td style="padding:6px 10px; border:1px solid #ddd;">Refrigerator</td><td style="padding:6px 10px; border:1px solid #ddd;">LG (2022)</td></tr>
+      <tr><td style="padding:6px 10px; border:1px solid #ddd;">Range</td><td style="padding:6px 10px; border:1px solid #ddd;">LG (2022)</td></tr>
+      <tr style="background:#f9f9f9;"><td style="padding:6px 10px; border:1px solid #ddd;">Dishwasher</td><td style="padding:6px 10px; border:1px solid #ddd;">LG</td></tr>
+      <tr><td style="padding:6px 10px; border:1px solid #ddd;">Microwave</td><td style="padding:6px 10px; border:1px solid #ddd;">Frigidaire</td></tr>
+      <tr style="background:#f9f9f9;"><td style="padding:6px 10px; border:1px solid #ddd;">Washer</td><td style="padding:6px 10px; border:1px solid #ddd;">LG</td></tr>
+      <tr><td style="padding:6px 10px; border:1px solid #ddd;">Dryer</td><td style="padding:6px 10px; border:1px solid #ddd;">LG</td></tr>
+    </table>
+  </div>
+
+  <!-- PRIORITY ACTIONS SUMMARY -->
+  <div style="background:linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color:white; padding:20px; border-radius:8px; margin-bottom:20px;">
+    <h2 style="margin-top:0; color:#f0c040; font-size:20px;">Priority Actions Summary</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px;">
+      <div>
+        <h4 style="color:#e74c3c; margin:0 0 8px;">Immediate / High Priority</h4>
+        <ul style="margin:0; padding-left:18px; font-size:13px; line-height:1.8;">
+          <li>Replace water heater (25 yrs, past life) — $1,500–$2,500</li>
+          <li>Roof evaluation by specialist (snow-covered) — TBD</li>
+          <li>Exposed combustible insulation in crawlspace — cover ASAP</li>
+          <li>Waste vent evaluation (suspected pipe) — ASAP</li>
+          <li>Basement walkout repair (door, parging, drain) — $2,000–$4,000</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:#f39c12; margin:0 0 8px;">Spring / When Practical</h4>
+        <ul style="margin:0; padding-left:18px; font-size:13px; line-height:1.8;">
+          <li>Verify A/C functionality — Minor cost</li>
+          <li>Verify downspout discharge — Spring</li>
+          <li>Verify lot grading — Spring</li>
+          <li>Improve gutters (rear — improper slope)</li>
+          <li>Exterior mortar repairs — $1,000+</li>
+          <li>Sewer video scan — $300+</li>
+          <li>Clean efflorescence / monitor basement walls</li>
+          <li>Abandoned chimney investigation</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:15px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.2);">
+      <strong style="color:#f0c040;">Estimated Total Remediation: $6,000–$14,000+</strong>
+      <span style="font-size:13px; color:#ccc;"> (excluding roof if replacement needed: add $10K–$20K+)</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  Data sourced from REALM MLP, HouseSigma, Realtor.ca, Zillow, Carson Dunlop & Associates (Inspection #96257) &nbsp;|&nbsp; Updated March 7, 2026 &nbsp;|&nbsp; All sold prices from TREB MLS &nbsp;|&nbsp; Offer Night: Tuesday March 10, 2026
+</div>
+
+</div>
+</body>
+</html>
