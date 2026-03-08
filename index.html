@@ -212,6 +212,38 @@
     details.section-collapse[open] > summary { margin-bottom: 16px; }
   }
 
+
+  /* Photo Gallery */
+  .photo-gallery-wrapper {
+    margin-bottom: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f0f0f0;
+  }
+  .photo-gallery {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 0;
+    scrollbar-width: none;
+  }
+  .photo-gallery::-webkit-scrollbar { display: none; }
+  .photo-gallery img {
+    flex: 0 0 auto;
+    height: 280px;
+    width: auto;
+    object-fit: cover;
+    scroll-snap-align: start;
+    display: block;
+  }
+  @media (max-width: 768px) {
+    .photo-gallery img { height: 220px; }
+  }
+  @media (min-width: 769px) {
+    .photo-gallery img { height: 340px; }
+  }
+
 </style>
 </head>
 <body>
@@ -240,10 +272,54 @@
   </div>
 </div>
 
+
+<!-- PHOTO GALLERY -->
+<div class="photo-gallery-wrapper">
+  <div class="photo-gallery" id="photoGallery">
+    <img src="https://cache05.housesigma.com/file/pix-treb/W12850988/eb1f5_1.jpg?011fea55" alt="530 Runnymede - Photo 1" loading="lazy">
+    <img src="https://cache06.housesigma.com/file/pix-treb/W12850988/eb1f5_2.jpg?011fea55" alt="530 Runnymede - Photo 2" loading="lazy">
+    <img src="https://cache08.housesigma.com/file/pix-treb/W12850988/eb1f5_3.jpg?011fea55" alt="530 Runnymede - Photo 3" loading="lazy">
+    <img src="https://cache09.housesigma.com/file/pix-treb/W12850988/eb1f5_4.jpg?011fea55" alt="530 Runnymede - Photo 4" loading="lazy">
+    <img src="https://cache16.housesigma.com/file/pix-treb/W12850988/eb1f5_5.jpg?011fea55" alt="530 Runnymede - Photo 5" loading="lazy">
+    <img src="https://cache17.housesigma.com/file/pix-treb/W12850988/eb1f5_6.jpg?011fea55" alt="530 Runnymede - Photo 6" loading="lazy">
+    <img src="https://cache18.housesigma.com/file/pix-treb/W12850988/eb1f5_7.jpg?011fea55" alt="530 Runnymede - Photo 7" loading="lazy">
+    <img src="https://cache19.housesigma.com/file/pix-treb/W12850988/eb1f5_8.jpg?011fea55" alt="530 Runnymede - Photo 8" loading="lazy">
+    <img src="https://cache-e11.housesigma.com/file/pix-treb/W12850988/eb1f5_9.jpg?011fea55" alt="530 Runnymede - Photo 9" loading="lazy">
+    <img src="https://cache-e12.housesigma.com/file/pix-treb/W12850988/eb1f5_10.jpg?011fea55" alt="530 Runnymede - Photo 10" loading="lazy">
+    <img src="https://cache-e13.housesigma.com/file/pix-treb/W12850988/eb1f5_11.jpg?011fea55" alt="530 Runnymede - Photo 11" loading="lazy">
+    <img src="https://cache-e14.housesigma.com/file/pix-treb/W12850988/eb1f5_12.jpg?011fea55" alt="530 Runnymede - Photo 12" loading="lazy">
+    <img src="https://cache-e15.housesigma.com/file/pix-treb/W12850988/eb1f5_13.jpg?011fea55" alt="530 Runnymede - Photo 13" loading="lazy">
+    <img src="https://cache-e16.housesigma.com/file/pix-treb/W12850988/eb1f5_14.jpg?011fea55" alt="530 Runnymede - Photo 14" loading="lazy">
+    <img src="https://cache-e17.housesigma.com/file/pix-treb/W12850988/eb1f5_15.jpg?011fea55" alt="530 Runnymede - Photo 15" loading="lazy">
+    <img src="https://cache-e18.housesigma.com/file/pix-treb/W12850988/eb1f5_16.jpg?011fea55" alt="530 Runnymede - Photo 16" loading="lazy">
+    <img src="https://cache-e19.housesigma.com/file/pix-treb/W12850988/eb1f5_17.jpg?011fea55" alt="530 Runnymede - Photo 17" loading="lazy">
+    <img src="https://cache-e20.housesigma.com/file/pix-treb/W12850988/eb1f5_18.jpg?011fea55" alt="530 Runnymede - Photo 18" loading="lazy">
+    <img src="https://cache-e21.housesigma.com/file/pix-treb/W12850988/eb1f5_19.jpg?011fea55" alt="530 Runnymede - Photo 19" loading="lazy">
+    <img src="https://cache-e22.housesigma.com/file/pix-treb/W12850988/eb1f5_20.jpg?011fea55" alt="530 Runnymede - Photo 20" loading="lazy">
+    <img src="https://cache-e23.housesigma.com/file/pix-treb/W12850988/eb1f5_21.jpg?011fea55" alt="530 Runnymede - Photo 21" loading="lazy">
+    <img src="https://cache-e24.housesigma.com/file/pix-treb/W12850988/eb1f5_22.jpg?011fea55" alt="530 Runnymede - Photo 22" loading="lazy">
+    <img src="https://cache-e25.housesigma.com/file/pix-treb/W12850988/eb1f5_23.jpg?011fea55" alt="530 Runnymede - Photo 23" loading="lazy">
+    <img src="https://cache-e26.housesigma.com/file/pix-treb/W12850988/eb1f5_24.jpg?011fea55" alt="530 Runnymede - Photo 24" loading="lazy">
+    <img src="https://cache-e27.housesigma.com/file/pix-treb/W12850988/eb1f5_25.jpg?011fea55" alt="530 Runnymede - Photo 25" loading="lazy">
+    <img src="https://cache-e28.housesigma.com/file/pix-treb/W12850988/eb1f5_26.jpg?011fea55" alt="530 Runnymede - Photo 26" loading="lazy">
+    <img src="https://cache-e29.housesigma.com/file/pix-treb/W12850988/eb1f5_27.jpg?011fea55" alt="530 Runnymede - Photo 27" loading="lazy">
+    <img src="https://cache-e30.housesigma.com/file/pix-treb/W12850988/eb1f5_28.jpg?011fea55" alt="530 Runnymede - Photo 28" loading="lazy">
+    <img src="https://cache-e31.housesigma.com/file/pix-treb/W12850988/eb1f5_29.jpg?011fea55" alt="530 Runnymede - Photo 29" loading="lazy">
+    <img src="https://cache-e32.housesigma.com/file/pix-treb/W12850988/eb1f5_30.jpg?011fea55" alt="530 Runnymede - Photo 30" loading="lazy">
+    <img src="https://cache05.housesigma.com/file/pix-treb/W12850988/eb1f5_31.jpg?011fea55" alt="530 Runnymede - Photo 31" loading="lazy">
+    <img src="https://cache06.housesigma.com/file/pix-treb/W12850988/eb1f5_32.jpg?011fea55" alt="530 Runnymede - Photo 32" loading="lazy">
+    <img src="https://cache08.housesigma.com/file/pix-treb/W12850988/eb1f5_33.jpg?011fea55" alt="530 Runnymede - Photo 33" loading="lazy">
+    <img src="https://cache09.housesigma.com/file/pix-treb/W12850988/eb1f5_34.jpg?011fea55" alt="530 Runnymede - Photo 34" loading="lazy">
+    <img src="https://cache16.housesigma.com/file/pix-treb/W12850988/eb1f5_35.jpg?011fea55" alt="530 Runnymede - Photo 35" loading="lazy">
+    <img src="https://cache17.housesigma.com/file/pix-treb/W12850988/eb1f5_36.jpg?011fea55" alt="530 Runnymede - Photo 36" loading="lazy">
+    <img src="https://cache18.housesigma.com/file/pix-treb/W12850988/eb1f5_37.jpg?011fea55" alt="530 Runnymede - Photo 37" loading="lazy">
+  </div>
+</div>
+
 <!-- SUBJECT PROPERTY DETAILS -->
 <div class="card">
   <details class="section-collapse">
-  <summary><h2>Subject Property Details</h2></summary>
+  <summary><h2>🏡 Subject Property Details</h2></summary>
   <div class="prop-grid">
     <div>
       <div class="prop-row"><span class="key">Address</span><span class="val"><a href="https://housesigma.com/on/toronto-real-estate/530-runnymede-rd/home/ZNkKJ3JPB26yd4V6?id_listing=amgL7Axx6glyZ1MW" target="_blank" style="color:inherit;text-decoration:underline;">530 Runnymede Rd</a>, Toronto M6S 2Z8</span></div>
@@ -368,474 +444,7 @@
 
 <!-- ESTIMATED REMEDIATION COSTS -->
 <div class="card">
-  <details class="section-collapse">
-  <summary><h2>💰 Estimated Remediation Costs (from Inspection)</h2></summary>
-  <p style="font-size: 13px; color: #666; margin-bottom: 12px;">Based on Carson Dunlop findings. Priority items that should factor into offer pricing.</p>
 
-  <div class="cost-table">
-    <div class="cost-row"><span class="item">Water heater replacement (electric tank, 25 yrs old — urgent)</span><span class="cost">$1,500 – $2,500</span></div>
-    <div class="cost-row"><span class="item">Basement walkout door replacement + parging repair</span><span class="cost">$2,000 – $4,000</span></div>
-    <div class="cost-row"><span class="item">Mortar repointing + spalling repair (exterior brick)</span><span class="cost">$1,000 – $3,000</span></div>
-    <div class="cost-row"><span class="item">Gutter slope correction (rear)</span><span class="cost">$300 – $800</span></div>
-    <div class="cost-row"><span class="item">Crawlspace insulation covering (combustible)</span><span class="cost">$500 – $1,500</span></div>
-    <div class="cost-row"><span class="item">Waste vent pipe correction (if confirmed)</span><span class="cost">$500 – $1,500</span></div>
-    <div class="cost-row"><span class="item">Abandoned chimney cap verification/repair</span><span class="cost">$300 – $800</span></div>
-    <div class="cost-total"><span>Estimated Total (Known Issues)</span><span>$6,100 – $14,100</span></div>
-  </div>
-
-  <p style="font-size: 12px; color: #888; margin-top: 10px;">
-    <strong>Overall Assessment:</strong> No major structural or electrical red flags — this is a well-maintained 1920s home. The biggest concern is the 25-year-old water heater (immediate replacement needed). The exterior mortar/walkout work is typical for a century home. The inability to fully inspect the roof and AC in winter adds some uncertainty — budget for potential roof work if the covering turns out to be older.
-  </p>
-  </details>
-</div>
-
-<!-- MAIN STREET IMPACT -->
-<div class="card">
-  <details class="section-collapse">
-  <summary><h2>⚠️ Main Street Impact Analysis</h2></summary>
-  <p style="font-size: 14px; margin-bottom: 12px;"><a href="https://housesigma.com/on/toronto-real-estate/530-runnymede-rd/home/ZNkKJ3JPB26yd4V6?id_listing=amgL7Axx6glyZ1MW" target="_blank" style="color:inherit;text-decoration:underline;">530 Runnymede Rd</a> sits directly on <strong>Runnymede Road</strong>, a busy main arterial street. This is the single most significant factor affecting its market value relative to comparable homes on quiet side streets.</p>
-
-  <div class="impact-box">
-    <div class="title">Industry-Standard Busy Street Discount: 10–20%</div>
-    <p>Appraisers typically deduct 10–20% for properties on main thoroughfares. In the Toronto market, homes on busy streets consistently sell for less than comparable properties on quiet residential streets, even in sought-after neighborhoods like Bloor West Village.</p>
-  </div>
-
-  <div class="comp-summary">
-    <div class="comp-summary-card">
-      <div class="street-type" style="color: #dc2626;">🚗 Runnymede Rd (Main Street) Sold Comps</div>
-      <div class="avg-price" style="color: #dc2626;">$1,225K – $1,450K</div>
-      <div class="range-text">3 sold comps on Runnymede Rd (Oct 2025 – Jan 2026)</div>
-    </div>
-    <div class="comp-summary-card">
-      <div class="street-type" style="color: #16a34a;">🏡 Side Streets (Durie, Colbeck, Willard, Evans, Armadale) Sold Comps</div>
-      <div class="avg-price" style="color: #16a34a;">$1,560K – $1,830K</div>
-      <div class="range-text">8 sold comps on nearby side streets (Aug 2025 – Mar 2026)</div>
-    </div>
-  </div>
-  <p style="font-size: 13px; color: #666; margin-top: 8px;">The data clearly shows a <strong>$200K–$500K discount</strong> for Runnymede Rd homes vs. comparable side-street properties. This represents roughly a <strong>15–25% main street discount</strong> in this specific micro-market.</p>
-  </details>
-</div>
-
-<!-- RUNNYMEDE RD COMPS (Same Street) -->
-<div class="card">
-  <details class="section-collapse">
-  <summary><h2>Comparable Sales — Runnymede Road (Main Street)</h2></summary>
-  <div class="table-scroll">
-  <table>
-    <thead>
-      <tr>
-        <th>Address</th>
-        <th>Sold Price</th>
-        <th>Sold Date</th>
-        <th>Beds/Baths</th>
-        <th>Sqft</th>
-        <th>Lot</th>
-        <th>vs. Ask</th>
-        <th>DOM</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="highlight-row">
-        <td><strong><a href="https://housesigma.com/on/toronto-real-estate/545-runnymede-road/home/b1DBW7Rlv5EYqlAp?id_listing=K8OgYBzOZ6oYJmG2" target="_blank" style="color:inherit;text-decoration:underline;">545 Runnymede Rd</a></strong> <span class="badge-main">Main St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, No garage, 2 parkings, Finished bsmt, Junction Area. Tax $5,746. Listed $1,079,999 — had prior terminated at $1,398K (Feb 2025).</span></td>
-        <td><strong>$1,335,000</strong></td>
-        <td>Dec 10, 2025</td>
-        <td>3 / 3</td>
-        <td>1,500–2,000</td>
-        <td>19 × 113</td>
-        <td class="sold-over">▲ $255K (+23.6%)</td>
-        <td>7</td>
-      </tr>
-      <tr>
-        <td><strong><a href="https://housesigma.com/on/toronto-real-estate/636-runnymede-road/home/JjAXw7QGLbXYQOzg?id_listing=MWBVyZW9e4q7Kemj" target="_blank" style="color:inherit;text-decoration:underline;">636 Runnymede Rd</a></strong> <span class="badge-main">Main St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, 1 garage, Finished Full bsmt, 27' wide lot, Bloor West Village. Tax $8,419. Listed $1,299,000. Prior terminated at $1,599K (Feb 2025). Property DOM: 63 days.</span></td>
-        <td><strong>$1,450,000</strong></td>
-        <td>Jan 21, 2026</td>
-        <td>4+1 / 5</td>
-        <td>2,000–2,500</td>
-        <td>27 × 154</td>
-        <td class="sold-over">▲ $151K (+11.6%)</td>
-        <td>7</td>
-      </tr>
-      <tr>
-        <td><strong><a href="https://housesigma.com/on/toronto-real-estate/87-runnymede-road/home/aQmD7zn2gK17J9Bo?id_listing=VLaGyGkoPVMyW1ZD" target="_blank" style="color:inherit;text-decoration:underline;">87 Runnymede Rd</a></strong> <span class="badge-main">Main St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, Needs work, Gas heat, near Bloor</span></td>
-        <td><strong>$1,225,000</strong></td>
-        <td>Oct 21, 2025</td>
-        <td>3+1 / 2</td>
-        <td>700–1,100</td>
-        <td>25 × 100</td>
-        <td class="sold-under">▼ $175K</td>
-        <td>33</td>
-      </tr>
-    </tbody>
-  </table>
-  </div>
-  <p style="font-size: 12px; color: #888; margin-top: 10px;">
-    <strong>Key Takeaway:</strong> <a href="https://housesigma.com/on/toronto-real-estate/545-runnymede-road/home/b1DBW7Rlv5EYqlAp?id_listing=K8OgYBzOZ6oYJmG2" target="_blank" style="color:inherit;text-decoration:underline;">545 Runnymede</a> is the most direct comp — same street, similar size, no garage, sold Dec 2025 for $1,335K (listed at $1,080K — went 23.6% over asking in a bidding war, 7 DOM). <a href="https://housesigma.com/on/toronto-real-estate/636-runnymede-road/home/JjAXw7QGLbXYQOzg?id_listing=MWBVyZW9e4q7Kemj" target="_blank" style="color:inherit;text-decoration:underline;">636 Runnymede</a> sold higher ($1.45M, +11.6% over ask) but was larger (2000-2500 sqft), wider lot (27'), and had 5 bathrooms. Both sold in 7 days with aggressive over-asking bids — confirming that even main-street homes attract bidding wars when priced right. <a href="https://housesigma.com/on/toronto-real-estate/87-runnymede-road/home/aQmD7zn2gK17J9Bo?id_listing=VLaGyGkoPVMyW1ZD" target="_blank" style="color:inherit;text-decoration:underline;">87 Runnymede</a> was much smaller (700-1100 sqft), needed work, and sat for 33 days.
-  </p>
-  </details>
-</div>
-
-<!-- ACTIVE COMPETITION ON RUNNYMEDE -->
-<div class="card">
-  <details class="section-collapse">
-  <summary><h2>🏠 Active Competition on Runnymede Rd</h2></summary>
-  <p style="font-size: 13px; color: #666; margin-bottom: 12px;">Other Runnymede Rd listings currently for sale. These compete for the same buyer pool but also help establish market expectations for main-street properties.</p>
-  <div class="table-scroll">
-  <table>
-    <thead>
-      <tr>
-        <th>Address</th>
-        <th>List Price</th>
-        <th>Details</th>
-        <th>Sqft</th>
-        <th>Lot</th>
-        <th>DOM</th>
-        <th>Assessment</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong><a href="https://housesigma.com/on/toronto-real-estate/470-runnymede-rd/home/2Z5BX32AlRO7Dar0?id_listing=NkKJ3JJ1A6m3d4V6" target="_blank" style="color:inherit;text-decoration:underline;">470 Runnymede Rd</a></strong> <span class="badge-main">Main St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, 1 garage, 2 parkings, Partially finished bsmt, Runnymede-BWV. Tax $6,349. RE/MAX West.</span></td>
-        <td><strong>$1,499,980</strong></td>
-        <td>3 bed / 2 bath</td>
-        <td style="color:#dc2626;font-weight:600">700–1,100</td>
-        <td>22 × 100</td>
-        <td>18</td>
-        <td>
-          <span style="color:#dc2626;font-weight:600;">⚠️ STRUGGLING</span><br>
-          <span style="font-size:11px;color:#666;">SigmaEstimate: $1,463K (listed 2.5% OVER estimate). 3 prior terminated listings ($1,398K → $1,578K → $1,524K). Last sold 2018 at $1,035K. Predicted DOM ~20 days. Much smaller than 530 yet asking $300K more.</span>
-        </td>
-      </tr>
-      <tr>
-        <td><strong><a href="https://housesigma.com/on/toronto-real-estate/317-runnymede-rd/home/zVwod7vW0j935mGN?id_listing=56k97w00Qln3KRjD" target="_blank" style="color:inherit;text-decoration:underline;">317 Runnymede Rd</a></strong> <span class="badge-main">Main St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, 2 garages, 4 parkings, Full bsmt w/ sep entrance, High Park North. Tax $7,503. Royal LePage. "In the same family for 48 years."</span></td>
-        <td><strong>$1,669,000</strong></td>
-        <td>4 bed / 2 bath</td>
-        <td>1,100–1,500</td>
-        <td>30 × 120</td>
-        <td>2</td>
-        <td>
-          <span style="color:#eab308;font-weight:600;">🔶 OVERPRICED?</span><br>
-          <span style="font-size:11px;color:#666;">First time for sale (estate/downsizing). Wider lot (30') with 2 garages. Original condition (100+ yrs, never renovated). Listed same day as 530 (March 5). Predicted DOM ~40 days. Much higher than recent Runnymede sold comps ($1,225K–$1,450K).</span>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  </div>
-
-  <div class="callout-good" style="margin-top: 16px;">
-    <strong>✅ <a href="https://housesigma.com/on/toronto-real-estate/530-runnymede-rd/home/ZNkKJ3JPB26yd4V6?id_listing=amgL7Axx6glyZ1MW" target="_blank" style="color:inherit;text-decoration:underline;">530 Runnymede</a>'s Competitive Position:</strong>
-    <span>530 is the best value on Runnymede Rd right now. It's 1500–2000 sqft (much larger than 470's 700–1100 sqft), renovated (unlike 317's original condition), and priced $300K–$470K below the competition. The 99/100 popularity score confirms buyers see this. <a href="https://housesigma.com/on/toronto-real-estate/470-runnymede-rd/home/2Z5BX32AlRO7Dar0?id_listing=NkKJ3JJ1A6m3d4V6" target="_blank" style="color:inherit;text-decoration:underline;">470 Runnymede</a> has failed to sell 3 times — it's a cautionary tale about overpricing on a main street. <a href="https://housesigma.com/on/toronto-real-estate/317-runnymede-rd/home/zVwod7vW0j935mGN?id_listing=56k97w00Qln3KRjD" target="_blank" style="color:inherit;text-decoration:underline;">317 Runnymede</a> at $1,669K appears aspirational given that the fully renovated <a href="https://housesigma.com/on/toronto-real-estate/636-runnymede-road/home/JjAXw7QGLbXYQOzg?id_listing=MWBVyZW9e4q7Kemj" target="_blank" style="color:inherit;text-decoration:underline;">636 Runnymede</a> (bigger house, wider lot) only fetched $1,450K.</span>
-  </div>
-  </details>
-</div>
-
-<!-- SIDE STREET COMPS -->
-<div class="card">
-  <details class="section-collapse">
-  <summary><h2>Comparable Sales — Nearby Side Streets (Premium Reference)</h2></summary>
-  <p style="font-size: 13px; color: #666; margin-bottom: 12px;">These comps show what similar homes sell for <em>without</em> the main street discount. The difference quantifies the Runnymede Road penalty.</p>
-  <div class="table-scroll">
-  <table>
-    <thead>
-      <tr>
-        <th>Address</th>
-        <th>Sold Price</th>
-        <th>Sold Date</th>
-        <th>Beds/Baths</th>
-        <th>Sqft</th>
-        <th>Lot</th>
-        <th>vs. Ask</th>
-        <th>DOM</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="highlight-row">
-        <td><strong><a href="https://housesigma.com/on/toronto-real-estate/519-durie-st/home/b1DBW7Rv9Mk7qlAp?id_listing=DO1w3W19Rqqy8Jg0" target="_blank" style="color:inherit;text-decoration:underline;">519 Durie St</a></strong> <span class="badge-side">Side St</span> <span style="background:#dc2626;color:white;font-size:9px;font-weight:700;padding:2px 5px;border-radius:3px;">NEW — 3 DAYS AGO</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, No garage, 3 parkings, Finished bsmt, 0.3km away</span></td>
-        <td><strong>$1,702,000</strong></td>
-        <td>Mar 4, 2026</td>
-        <td>3+2 / 3</td>
-        <td>1,500–2,000</td>
-        <td>25 × 105</td>
-        <td class="sold-over">▲ $103K (+6.4%)</td>
-        <td>7</td>
-      </tr>
-      <tr>
-        <td><strong>100 Colbeck St</strong> <span class="badge-side">Side St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, smaller home, no garage</span></td>
-        <td><strong>$1,652,000</strong></td>
-        <td>Nov 2025</td>
-        <td>3 / 2</td>
-        <td>1,100–1,500</td>
-        <td>24 × 85</td>
-        <td class="sold-over">▲ $42K</td>
-        <td>4</td>
-      </tr>
-      <tr>
-        <td><strong>16 Evans Ave</strong> <span class="badge-side">Side St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, 1 garage</span></td>
-        <td><strong>$1,607,000</strong></td>
-        <td>Nov 2025</td>
-        <td>4 / 1</td>
-        <td>1,500–2,000</td>
-        <td>28 × 109</td>
-        <td>—</td>
-        <td>—</td>
-      </tr>
-      <tr>
-        <td><strong>321 Willard Ave</strong> <span class="badge-side">Side St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, 1 garage, deep lot</span></td>
-        <td><strong>$1,700,000</strong></td>
-        <td>Nov 2025</td>
-        <td>4 / 2</td>
-        <td>1,500–2,000</td>
-        <td>25 × 156</td>
-        <td>—</td>
-        <td>—</td>
-      </tr>
-      <tr>
-        <td><strong>377 Armadale Ave</strong> <span class="badge-side">Side St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, 1 garage</span></td>
-        <td><strong>$1,560,000</strong></td>
-        <td>Oct 2025</td>
-        <td>4+1 / 2</td>
-        <td>1,100–1,500</td>
-        <td>25 × 109</td>
-        <td>—</td>
-        <td>—</td>
-      </tr>
-      <tr>
-        <td><strong>122 Colbeck St</strong> <span class="badge-side">Side St</span><br><span style="font-size:11px;color:#666">Detached 1½-Storey, 30' wide lot, Gas</span></td>
-        <td><strong>$1,563,000</strong></td>
-        <td>Aug 2025</td>
-        <td>3+1 / 3</td>
-        <td>1,500–2,000</td>
-        <td>30 × —</td>
-        <td class="sold-over">▲ $165K</td>
-        <td>7</td>
-      </tr>
-      <tr>
-        <td><strong>157 Colbeck St</strong> <span class="badge-side">Side St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, 1 garage, wider lot</span></td>
-        <td><strong>$1,830,000</strong></td>
-        <td>Oct 2025</td>
-        <td>4+1 / 4</td>
-        <td>1,500–2,000</td>
-        <td>29 × 97</td>
-        <td>—</td>
-        <td>—</td>
-      </tr>
-      <tr>
-        <td><strong>418 Willard Ave</strong> <span class="badge-side">Side St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, 2 garage, wide lot</span></td>
-        <td><strong>$1,725,000</strong></td>
-        <td>Sep 2025</td>
-        <td>5 / 2</td>
-        <td>1,500–2,000</td>
-        <td>33 × 114</td>
-        <td>—</td>
-        <td>—</td>
-      </tr>
-    </tbody>
-  </table>
-  </div>
-  <p style="font-size: 12px; color: #888; margin-top: 10px;">
-    <strong>Key Takeaway:</strong> The freshest comp — <a href="https://housesigma.com/on/toronto-real-estate/519-durie-st/home/b1DBW7Rv9Mk7qlAp?id_listing=DO1w3W19Rqqy8Jg0" target="_blank" style="color:inherit;text-decoration:underline;">519 Durie</a> (sold March 4, just 3 days ago!) — went for $1,702K, 6.4% over asking, on a side street only 0.3km from <a href="https://housesigma.com/on/toronto-real-estate/530-runnymede-rd/home/ZNkKJ3JPB26yd4V6?id_listing=amgL7Axx6glyZ1MW" target="_blank" style="color:inherit;text-decoration:underline;">530 Runnymede</a>. Side-street detached homes in the area sell for $1.56M–$1.83M. Applying the 15–25% main street discount puts <a href="https://housesigma.com/on/toronto-real-estate/530-runnymede-rd/home/ZNkKJ3JPB26yd4V6?id_listing=amgL7Axx6glyZ1MW" target="_blank" style="color:inherit;text-decoration:underline;">530 Runnymede</a>'s value at approximately $1,250K–$1,400K.
-  </p>
-  </details>
-</div>
-
-<!-- MARKET CONTEXT -->
-<div class="card">
-  <details class="section-collapse">
-  <summary><h2>Market Context — Toronto W02 (Feb/Mar 2026)</h2></summary>
-  <div class="prop-grid">
-    <div>
-      <div class="prop-row"><span class="key">Avg. Detached Price (Toronto)</span><span class="val">~$1,144,400</span></div>
-      <div class="prop-row"><span class="key">Sale-to-List Ratio</span><span class="val">96–97%</span></div>
-      <div class="prop-row"><span class="key">Market Direction</span><span class="val">Softening (▼8.1% YoY)</span></div>
-    </div>
-    <div>
-      <div class="prop-row"><span class="key">Avg. DOM (Detached)</span><span class="val">~20–30 days</span></div>
-      <div class="prop-row"><span class="key">Active: <a href="https://housesigma.com/on/toronto-real-estate/317-runnymede-rd/home/zVwod7vW0j935mGN?id_listing=56k97w00Qln3KRjD" target="_blank" style="color:inherit;text-decoration:underline;">317 Runnymede</a></span><span class="val">$1,669,000 (4/2, 30×120, original)</span></div>
-      <div class="prop-row"><span class="key">Active: <a href="https://housesigma.com/on/toronto-real-estate/470-runnymede-rd/home/2Z5BX32AlRO7Dar0?id_listing=NkKJ3JJ1A6m3d4V6" target="_blank" style="color:inherit;text-decoration:underline;">470 Runnymede</a></span><span class="val">$1,499,980 (3/2, 22×100, 3× failed)</span></div>
-      <div class="prop-row"><span class="key">Rental Next Door (528)</span><span class="val">$2,500–$2,850/mo units</span></div>
-    </div>
-  </div>
-  <p style="font-size: 13px; color: #666; margin-top: 12px;">The broader Toronto detached market is softening, with prices down ~8% year-over-year. This creates a buyer-favorable environment, especially for properties with known drawbacks (main street, electric heating). Inventory is rising and bidding wars are less common than 2024.</p>
-  </details>
-</div>
-
-<!-- OFFER STRATEGY -->
-<div class="card">
-  <details class="section-collapse">
-  <summary><h2>Offer Strategy — Offer Night: Tuesday March 10</h2></summary>
-  <div class="callout-danger" style="margin-bottom: 16px;">
-    <strong>⚠️ MULTIPLE OFFERS EXPECTED:</strong>
-    <span>With 99/100 listing popularity, listing priced $50K below SigmaEstimate, and the open house weekend happening now (Mar 8), expect significant competition on offer night. The most recent side-street comp (<a href="https://housesigma.com/on/toronto-real-estate/519-durie-st/home/b1DBW7Rv9Mk7qlAp?id_listing=DO1w3W19Rqqy8Jg0" target="_blank" style="color:inherit;text-decoration:underline;">519 Durie</a>, $1,702K) sold 6.4% over asking just 3 days ago — indicating strong demand in this exact area right now.</span>
-  </div>
-
-  <p style="font-size: 14px; margin-bottom: 16px;">Fair market value range: <strong>$1,275,000–$1,400,000</strong>. Anchored to <a href="https://housesigma.com/on/toronto-real-estate/545-runnymede-road/home/b1DBW7Rlv5EYqlAp?id_listing=K8OgYBzOZ6oYJmG2" target="_blank" style="color:inherit;text-decoration:underline;">545 Runnymede</a> ($1,335K, Dec 2025) as the direct main-street comp, adjusted for 530's advantages (2-car garage, deeper lot, gas heat). The <a href="https://housesigma.com/on/toronto-real-estate/519-durie-st/home/b1DBW7Rv9Mk7qlAp?id_listing=DO1w3W19Rqqy8Jg0" target="_blank" style="color:inherit;text-decoration:underline;">519 Durie</a> sale ($1,702K on a side street, 3 days ago, +6.4% over asking) confirms strong current demand — apply the 15–20% main-street discount to get $1,360K–$1,445K range.</p>
-
-  <div class="strategy-grid">
-    <div class="strategy-card tier-conservative">
-      <div class="tier">Conservative</div>
-      <div class="range">$1,275K–$1,310K</div>
-      <div class="note">Near the <a href="https://housesigma.com/on/toronto-real-estate/545-runnymede-road/home/b1DBW7Rlv5EYqlAp?id_listing=K8OgYBzOZ6oYJmG2" target="_blank" style="color:inherit;text-decoration:underline;">545 Runnymede</a> anchor. Accounts for $6K–$14K in repairs and roof uncertainty. Likely won't win in a bidding war with 99/100 popularity.</div>
-    </div>
-    <div class="strategy-card tier-sweet">
-      <div class="tier">Sweet Spot ★</div>
-      <div class="range">$1,325K–$1,375K</div>
-      <div class="note">Matches/exceeds <a href="https://housesigma.com/on/toronto-real-estate/545-runnymede-road/home/b1DBW7Rlv5EYqlAp?id_listing=K8OgYBzOZ6oYJmG2" target="_blank" style="color:inherit;text-decoration:underline;">545 Runnymede</a> ($1,335K) and reflects 530's garage premium. <a href="https://housesigma.com/on/toronto-real-estate/519-durie-st/home/b1DBW7Rv9Mk7qlAp?id_listing=DO1w3W19Rqqy8Jg0" target="_blank" style="color:inherit;text-decoration:underline;">519 Durie</a> side-street discount supports this range. Best balance of winning and value.</div>
-    </div>
-    <div class="strategy-card tier-aggressive">
-      <div class="tier">Aggressive (To Win)</div>
-      <div class="range">$1,380K–$1,425K</div>
-      <div class="note">If you must win. Still below <a href="https://housesigma.com/on/toronto-real-estate/636-runnymede-road/home/JjAXw7QGLbXYQOzg?id_listing=MWBVyZW9e4q7Kemj" target="_blank" style="color:inherit;text-decoration:underline;">636 Runnymede</a> ($1.45M, gut reno, wider lot). Justified by 2-car garage premium and <a href="https://housesigma.com/on/toronto-real-estate/519-durie-st/home/b1DBW7Rv9Mk7qlAp?id_listing=DO1w3W19Rqqy8Jg0" target="_blank" style="color:inherit;text-decoration:underline;">519 Durie</a>'s $1.7M side-street price with 15-20% main-street discount applied.</div>
-    </div>
-  </div>
-
-  <div style="background:#eff6ff; border:1px solid #93c5fd; border-radius:8px; padding:16px 20px; margin-top:16px;">
-    <div style="font-weight:700; color:#1e40af; margin-bottom:6px;">💡 Offer Night Tactics</div>
-    <div style="font-size:13px; color:#1e3a5f; line-height:1.7;">
-      <strong>1. Escalation clause:</strong> Consider offering $1,325K with an escalation clause up to $1,375K–$1,400K in $5K increments above the next highest offer. This protects you from overpaying while staying competitive.<br>
-      <strong>2. Conditions:</strong> A clean (no conditions) offer is stronger but riskier. Since you already have the Carson Dunlop inspection, you have more confidence to go firm. Consider whether you need a financing condition.<br>
-      <strong>3. Deposit:</strong> A strong deposit ($50K–$75K) signals seriousness.<br>
-      <strong>4. Closing date:</strong> Be flexible — match the seller's preference (they've owned since 2012, likely need time to find a new home). A 60–90 day close may be appealing to them.
-    </div>
-  </div>
-  </details>
-</div>
-
-<!-- ADVANTAGES & RISKS -->
-<div class="card">
-  <details class="section-collapse">
-  <summary><h2>Advantages & Considerations</h2></summary>
-  <div class="pros-cons">
-    <div class="pros-list">
-      <h3>✅ Strengths</h3>
-      <ul>
-        <li><strong>2-car detached garage + laneway parking</strong> — rare for the area, 3 total spots</li>
-        <li><strong>Deep lot (149 ft)</strong> — one of the deepest on Runnymede</li>
-        <li><strong>Finished basement with walkout & sep. entrance</strong> — income/nanny suite potential</li>
-        <li><strong>9'9" ceilings</strong> — premium ceiling height for 1920s home</li>
-        <li><strong>Detached</strong> — not semi or row, premium housing type</li>
-        <li><strong>Bloor West Village location</strong> — top-tier schools, TTC, shops</li>
-        <li><strong>Chef's kitchen, open concept</strong> — modern layout</li>
-        <li><strong>Stained glass, period details</strong> — character appeal</li>
-        <li><strong>One-of-a-kind character</strong> — former commercial building (believed to be a butcher shop), unlike anything else on the street. The kind of house people remember.</li>
-      </ul>
-    </div>
-    <div class="cons-list">
-      <h3>⚠️ Considerations</h3>
-      <ul>
-        <li><strong>Main street (Runnymede Rd)</strong> — 10-20% discount vs. side streets, traffic noise, reduced privacy</li>
-        <li><strong>Water heater at 25 years</strong> — well past 10-15 yr life expectancy, replacement needed immediately ($1.5K–$2.5K)</li>
-        <li><strong>Roof age/condition unknown</strong> — could not be fully inspected due to snow; may need replacement</li>
-        <li><strong>Exterior mortar deterioration + spalling</strong> — typical for 100-yr brick but $1K–$3K to repair</li>
-        <li><strong>Basement walkout issues</strong> — water stains, crumbling parging, moisture damage ($2K–$4K)</li>
-        <li><strong>Narrower lot (20 ft)</strong> — <a href="https://housesigma.com/on/toronto-real-estate/545-runnymede-road/home/b1DBW7Rlv5EYqlAp?id_listing=K8OgYBzOZ6oYJmG2" target="_blank" style="color:inherit;text-decoration:underline;">545 Runnymede</a> similar, but 636 was 27.3' wide</li>
-        <li><strong>Softening market</strong> — prices down 8% YoY in Toronto detached</li>
-        <li><strong>528 Runnymede is a rental next door</strong> — investor-owned property, potential tenant turnover</li>
-        <li><strong>Possible hidden K&T wiring</strong> — no active K&T found, but inspector notes it may exist given age of home</li>
-        <li><strong>Unconventional exterior & layout</strong> — the building's commercial origins (former butcher shop) give it a storefront-like facade and a "funky" interior layout that's functional but unlike typical residential homes. This can polarize buyers — some will love it, others won't get past it. Narrower resale pool.</li>
-      </ul>
-    </div>
-  </div>
-  </details>
-</div>
-
-<!-- NEGOTIATION LEVERAGE -->
-<div class="card">
-  <details class="section-collapse">
-  <summary><h2>Negotiation Leverage Points</h2></summary>
-  <div style="font-size: 13px; line-height: 1.8;">
-    <p>When positioning your offer, these are the key points to justify a price below the emotional anchor of the listing:</p>
-    <ol style="margin-top: 10px; padding-left: 20px;">
-      <li><strong>$6K–$14K in inspection-identified repairs:</strong> The Carson Dunlop report documents a 25-year-old water heater (needs immediate replacement), exterior mortar deterioration, basement walkout damage, and other items totaling $6K–$14K. These are quantifiable, report-backed costs.</li>
-      <li><strong>Main street location:</strong> Direct comps on Runnymede sell $200K–$500K below equivalent side-street homes. This isn't negotiable — it's a permanent feature of the property.</li>
-      <li><strong>Roof uncertainty:</strong> The roof could not be fully inspected due to snow. If the covering is nearing end of life, that's $10K–$20K+. This unknown risk justifies a conservative offer.</li>
-      <li><strong>Market conditions:</strong> Toronto detached prices are down 8% YoY. Sale-to-list ratios are 96-97%. This isn't a bidding war market.</li>
-      <li><strong><a href="https://housesigma.com/on/toronto-real-estate/545-runnymede-road/home/b1DBW7Rlv5EYqlAp?id_listing=K8OgYBzOZ6oYJmG2" target="_blank" style="color:inherit;text-decoration:underline;">545 Runnymede</a> anchor:</strong> The most direct comparable (same street, similar size) sold at $1,335K in Dec 2025.</li>
-      <li><strong><a href="https://housesigma.com/on/toronto-real-estate/519-durie-st/home/b1DBW7Rv9Mk7qlAp?id_listing=DO1w3W19Rqqy8Jg0" target="_blank" style="color:inherit;text-decoration:underline;">519 Durie</a> side-street premium context:</strong> While <a href="https://housesigma.com/on/toronto-real-estate/519-durie-st/home/b1DBW7Rv9Mk7qlAp?id_listing=DO1w3W19Rqqy8Jg0" target="_blank" style="color:inherit;text-decoration:underline;">519 Durie</a> sold for $1,702K (Mar 4), that's a quiet side street. Applying the established 15–20% main-street discount: $1,702K × 0.80–0.85 = $1,362K–$1,447K. This frames your offer in the $1,325K–$1,400K range as data-backed.</li>
-      <li><strong>Rental property next door (528):</strong> Adjacent rental units can be a concern for owner-occupant buyers.</li>
-      <li><strong>Unconventional building (former butcher shop):</strong> The storefront-like exterior and non-standard interior layout will polarize buyers. Some will love the character; others will walk away. This narrows the resale pool and is a legitimate reason to price below a "normal" detached home.</li>
-    </ol>
-  </div>
-  </details>
-</div>
-
-<!-- SELLER'S PERSPECTIVE -->
-<div class="card">
-  <details class="section-collapse">
-  <summary><h2>🪞 Seller's Perspective — What the Other Side Is Thinking</h2></summary>
-  <p style="font-size: 13px; color: #666; margin-bottom: 16px;">Understanding the seller's mindset and their agent's expectations helps frame the right offer. Here's what's likely happening on the other side of the table.</p>
-
-  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
-    <div style="background:#faf5ff; border:1px solid #d8b4fe; border-radius:8px; padding:16px;">
-      <div style="font-size:11px; text-transform:uppercase; color:#7e22ce; font-weight:700; margin-bottom:6px;">Seller's Position</div>
-      <div style="font-size:13px; line-height:1.7;">
-        Purchased in <strong>2012 for $699,900</strong>. Sitting on $500K–$700K in equity regardless of outcome. They are <strong>not desperate</strong> — they can afford to wait for the right number. But they've also chosen to list with an offer night strategy, which means they want to sell now, not test the market.
-      </div>
-    </div>
-    <div style="background:#faf5ff; border:1px solid #d8b4fe; border-radius:8px; padding:16px;">
-      <div style="font-size:11px; text-transform:uppercase; color:#7e22ce; font-weight:700; margin-bottom:6px;">Agent's Pricing Strategy</div>
-      <div style="font-size:13px; line-height:1.7;">
-        Listed at <strong>$1,199K — deliberately $50K below the SigmaEstimate</strong> ($1,249K). This is textbook "price low, drive traffic, create a bidding war." The Babiak Team wants 5–8 offers on the table Tuesday night. The 99/100 popularity score tells them the strategy is working.
-      </div>
-    </div>
-  </div>
-
-  <h3 style="color:#7e22ce; margin-bottom:10px;">What the Seller's Agent Is Likely Telling Their Client</h3>
-  <div style="background:white; border:1px solid #e9d5ff; border-radius:8px; padding:16px; margin-bottom:16px;">
-    <div style="font-size:13px; line-height:1.8;">
-      <strong>"Expect $1,300K–$1,400K."</strong> The agent's math: <a href="https://housesigma.com/on/toronto-real-estate/545-runnymede-road/home/b1DBW7Rlv5EYqlAp?id_listing=K8OgYBzOZ6oYJmG2" target="_blank" style="color:#7e22ce;text-decoration:underline;">545 Runnymede</a> sold for $1,335K (Dec 2025) and 530 is arguably better — 2-car garage, deeper lot, gas furnace, basement suite. The agent believes a $30K–$65K premium over 545 is justified, putting the target at <strong>$1,350K–$1,400K</strong>.
-      <br><br>
-      The agent is privately hoping one emotional bidder pushes past $1,400K, but isn't banking on it. They know the funky exterior and unconventional layout (former butcher shop) will thin the offer pool. The 99/100 score measures clicks, not committed bidders.
-    </div>
-  </div>
-
-  <h3 style="color:#7e22ce; margin-bottom:10px;">Seller's Expectations vs. Reality</h3>
-  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:16px;">
-    <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px; padding:14px; text-align:center;">
-      <div style="font-size:11px; text-transform:uppercase; color:#166534; font-weight:700;">Would Accept</div>
-      <div style="font-size:22px; font-weight:800; color:#166534;">$1,300K+</div>
-      <div style="font-size:11px; color:#666;">That's $600K profit on a $700K purchase. Hard to say no.</div>
-    </div>
-    <div style="background:#eff6ff; border:1px solid #93c5fd; border-radius:8px; padding:14px; text-align:center;">
-      <div style="font-size:11px; text-transform:uppercase; color:#1e40af; font-weight:700;">Expecting</div>
-      <div style="font-size:22px; font-weight:800; color:#1e40af;">$1,325K–$1,380K</div>
-      <div style="font-size:11px; color:#666;">Agent's realistic range based on comp data and offer night dynamics.</div>
-    </div>
-    <div style="background:#faf5ff; border:1px solid #d8b4fe; border-radius:8px; padding:14px; text-align:center;">
-      <div style="font-size:11px; text-transform:uppercase; color:#7e22ce; font-weight:700;">Dreaming Of</div>
-      <div style="font-size:22px; font-weight:800; color:#7e22ce;">$1,400K–$1,450K</div>
-      <div style="font-size:11px; color:#666;">Possible but unlikely — would require 5+ offers and an emotional overbid.</div>
-    </div>
-  </div>
-
-  <h3 style="color:#7e22ce; margin-bottom:10px;">What Worries the Seller's Side</h3>
-  <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px;">
-    <div style="background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:14px;">
-      <div style="font-size:13px;"><strong>🏪 The funky factor narrows the pool.</strong> The storefront exterior and non-standard layout will turn off traditional buyers. High online interest (99/100) may not translate to 5+ serious offers. If only 2–3 offers come in, bidding war dynamics weaken significantly.</div>
-    </div>
-    <div style="background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:14px;">
-      <div style="font-size:13px;"><strong>🏚️ <a href="https://housesigma.com/on/toronto-real-estate/470-runnymede-rd/home/2Z5BX32AlRO7Dar0?id_listing=NkKJ3JJ1A6m3d4V6" target="_blank" style="color:#7e22ce;text-decoration:underline;">470 Runnymede</a> is a cautionary tale.</strong> Three terminated listings, 18+ DOM, and still sitting. The seller's agent knows that overpricing on a main street leads to stale listings. They need to close this on offer night, not drag it out.</div>
-    </div>
-    <div style="background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:14px;">
-      <div style="font-size:13px;"><strong>📉 Softening market.</strong> Toronto detached prices are down 8% YoY. The sale-to-list ratio is 96–97%. The bidding war era is fading. The agent knows that if offer night doesn't produce a strong result, relisting gets progressively harder.</div>
-    </div>
-    <div style="background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:14px;">
-      <div style="font-size:13px;"><strong>🏷️ <a href="https://housesigma.com/on/toronto-real-estate/317-runnymede-rd/home/zVwod7vW0j935mGN?id_listing=56k97w00Qln3KRjD" target="_blank" style="color:#7e22ce;text-decoration:underline;">317 Runnymede</a> listed the same day at $1,669K.</strong> This actually helps the seller's agent frame 530 as the "deal" on Runnymede. But it also reminds buyers that main-street pricing is chaotic — two houses on the same street, $470K apart, listed the same day.</div>
-    </div>
-  </div>
-
-  <div style="background:linear-gradient(135deg, #581c87 0%, #7e22ce 100%); color:white; border-radius:8px; padding:18px 22px;">
-    <div style="font-weight:700; font-size:15px; margin-bottom:8px;">💡 What This Means for Your Offer</div>
-    <div style="font-size:13px; line-height:1.8; opacity:0.95;">
-      A <strong>$1,380K clean offer</strong> with a <strong>$100K deposit</strong> and <strong>flexible closing</strong> lands at the very top of the seller's realistic expectations. It clears the 545 Runnymede anchor by $45K, signals serious intent, and removes all risk for the seller. The only scenario where this doesn't win is if another buyer comes in clean at $1,400K+ — which requires someone willing to pay more than the data supports. The seller's agent will look at your offer and tell their client: <strong>"This is a strong offer. Taking it is the smart move."</strong>
-    </div>
-  </div>
-  </details>
-</div>
-
-<!-- ============================== -->
-<!-- FULL INSPECTION REPORT SECTION -->
-<!-- ============================== -->
-
-<div class="card">
   <details class="section-collapse">
   <summary><h2>📋 Full Home Inspection Report</h2></summary>
   <p style="text-align:center; color:#666; font-size:14px; margin-bottom:8px;">Carson Dunlop & Associates — Report No. 96257, v.2 — Inspected February 26, 2026 by Jonathan Dube, RHI</p>
@@ -1198,9 +807,477 @@
 </div>
 
 <!-- KEY INSIGHT -->
-<div class="insight">
+<div class="card">
   <details class="section-collapse">
-  <summary><h2>Bottom Line</h2></summary>
+  <summary><h2>💰 Estimated Remediation Costs (from Inspection)</h2></summary>
+  <p style="font-size: 13px; color: #666; margin-bottom: 12px;">Based on Carson Dunlop findings. Priority items that should factor into offer pricing.</p>
+
+  <div class="cost-table">
+    <div class="cost-row"><span class="item">Water heater replacement (electric tank, 25 yrs old — urgent)</span><span class="cost">$1,500 – $2,500</span></div>
+    <div class="cost-row"><span class="item">Basement walkout door replacement + parging repair</span><span class="cost">$2,000 – $4,000</span></div>
+    <div class="cost-row"><span class="item">Mortar repointing + spalling repair (exterior brick)</span><span class="cost">$1,000 – $3,000</span></div>
+    <div class="cost-row"><span class="item">Gutter slope correction (rear)</span><span class="cost">$300 – $800</span></div>
+    <div class="cost-row"><span class="item">Crawlspace insulation covering (combustible)</span><span class="cost">$500 – $1,500</span></div>
+    <div class="cost-row"><span class="item">Waste vent pipe correction (if confirmed)</span><span class="cost">$500 – $1,500</span></div>
+    <div class="cost-row"><span class="item">Abandoned chimney cap verification/repair</span><span class="cost">$300 – $800</span></div>
+    <div class="cost-total"><span>Estimated Total (Known Issues)</span><span>$6,100 – $14,100</span></div>
+  </div>
+
+  <p style="font-size: 12px; color: #888; margin-top: 10px;">
+    <strong>Overall Assessment:</strong> No major structural or electrical red flags — this is a well-maintained 1920s home. The biggest concern is the 25-year-old water heater (immediate replacement needed). The exterior mortar/walkout work is typical for a century home. The inability to fully inspect the roof and AC in winter adds some uncertainty — budget for potential roof work if the covering turns out to be older.
+  </p>
+  </details>
+</div>
+
+<!-- MAIN STREET IMPACT -->
+<div class="card">
+  <details class="section-collapse">
+  <summary><h2>⚠️ Main Street Impact Analysis</h2></summary>
+  <p style="font-size: 14px; margin-bottom: 12px;"><a href="https://housesigma.com/on/toronto-real-estate/530-runnymede-rd/home/ZNkKJ3JPB26yd4V6?id_listing=amgL7Axx6glyZ1MW" target="_blank" style="color:inherit;text-decoration:underline;">530 Runnymede Rd</a> sits directly on <strong>Runnymede Road</strong>, a busy main arterial street. This is the single most significant factor affecting its market value relative to comparable homes on quiet side streets.</p>
+
+  <div class="impact-box">
+    <div class="title">Industry-Standard Busy Street Discount: 10–20%</div>
+    <p>Appraisers typically deduct 10–20% for properties on main thoroughfares. In the Toronto market, homes on busy streets consistently sell for less than comparable properties on quiet residential streets, even in sought-after neighborhoods like Bloor West Village.</p>
+  </div>
+
+  <div class="comp-summary">
+    <div class="comp-summary-card">
+      <div class="street-type" style="color: #dc2626;">🚗 Runnymede Rd (Main Street) Sold Comps</div>
+      <div class="avg-price" style="color: #dc2626;">$1,225K – $1,450K</div>
+      <div class="range-text">3 sold comps on Runnymede Rd (Oct 2025 – Jan 2026)</div>
+    </div>
+    <div class="comp-summary-card">
+      <div class="street-type" style="color: #16a34a;">🏡 Side Streets (Durie, Colbeck, Willard, Evans, Armadale) Sold Comps</div>
+      <div class="avg-price" style="color: #16a34a;">$1,560K – $1,830K</div>
+      <div class="range-text">8 sold comps on nearby side streets (Aug 2025 – Mar 2026)</div>
+    </div>
+  </div>
+  <p style="font-size: 13px; color: #666; margin-top: 8px;">The data clearly shows a <strong>$200K–$500K discount</strong> for Runnymede Rd homes vs. comparable side-street properties. This represents roughly a <strong>15–25% main street discount</strong> in this specific micro-market.</p>
+  </details>
+</div>
+
+<!-- RUNNYMEDE RD COMPS (Same Street) -->
+<div class="card">
+  <details class="section-collapse">
+  <summary><h2>📊 Comparable Sales — Runnymede Road (Main Street)</h2></summary>
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr>
+        <th>Address</th>
+        <th>Sold Price</th>
+        <th>Sold Date</th>
+        <th>Beds/Baths</th>
+        <th>Sqft</th>
+        <th>Lot</th>
+        <th>vs. Ask</th>
+        <th>DOM</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight-row">
+        <td><strong><a href="https://housesigma.com/on/toronto-real-estate/545-runnymede-road/home/b1DBW7Rlv5EYqlAp?id_listing=K8OgYBzOZ6oYJmG2" target="_blank" style="color:inherit;text-decoration:underline;">545 Runnymede Rd</a></strong> <span class="badge-main">Main St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, No garage, 2 parkings, Finished bsmt, Junction Area. Tax $5,746. Listed $1,079,999 — had prior terminated at $1,398K (Feb 2025).</span></td>
+        <td><strong>$1,335,000</strong></td>
+        <td>Dec 10, 2025</td>
+        <td>3 / 3</td>
+        <td>1,500–2,000</td>
+        <td>19 × 113</td>
+        <td class="sold-over">▲ $255K (+23.6%)</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td><strong><a href="https://housesigma.com/on/toronto-real-estate/636-runnymede-road/home/JjAXw7QGLbXYQOzg?id_listing=MWBVyZW9e4q7Kemj" target="_blank" style="color:inherit;text-decoration:underline;">636 Runnymede Rd</a></strong> <span class="badge-main">Main St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, 1 garage, Finished Full bsmt, 27' wide lot, Bloor West Village. Tax $8,419. Listed $1,299,000. Prior terminated at $1,599K (Feb 2025). Property DOM: 63 days.</span></td>
+        <td><strong>$1,450,000</strong></td>
+        <td>Jan 21, 2026</td>
+        <td>4+1 / 5</td>
+        <td>2,000–2,500</td>
+        <td>27 × 154</td>
+        <td class="sold-over">▲ $151K (+11.6%)</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td><strong><a href="https://housesigma.com/on/toronto-real-estate/87-runnymede-road/home/aQmD7zn2gK17J9Bo?id_listing=VLaGyGkoPVMyW1ZD" target="_blank" style="color:inherit;text-decoration:underline;">87 Runnymede Rd</a></strong> <span class="badge-main">Main St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, Needs work, Gas heat, near Bloor</span></td>
+        <td><strong>$1,225,000</strong></td>
+        <td>Oct 21, 2025</td>
+        <td>3+1 / 2</td>
+        <td>700–1,100</td>
+        <td>25 × 100</td>
+        <td class="sold-under">▼ $175K</td>
+        <td>33</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <p style="font-size: 12px; color: #888; margin-top: 10px;">
+    <strong>Key Takeaway:</strong> <a href="https://housesigma.com/on/toronto-real-estate/545-runnymede-road/home/b1DBW7Rlv5EYqlAp?id_listing=K8OgYBzOZ6oYJmG2" target="_blank" style="color:inherit;text-decoration:underline;">545 Runnymede</a> is the most direct comp — same street, similar size, no garage, sold Dec 2025 for $1,335K (listed at $1,080K — went 23.6% over asking in a bidding war, 7 DOM). <a href="https://housesigma.com/on/toronto-real-estate/636-runnymede-road/home/JjAXw7QGLbXYQOzg?id_listing=MWBVyZW9e4q7Kemj" target="_blank" style="color:inherit;text-decoration:underline;">636 Runnymede</a> sold higher ($1.45M, +11.6% over ask) but was larger (2000-2500 sqft), wider lot (27'), and had 5 bathrooms. Both sold in 7 days with aggressive over-asking bids — confirming that even main-street homes attract bidding wars when priced right. <a href="https://housesigma.com/on/toronto-real-estate/87-runnymede-road/home/aQmD7zn2gK17J9Bo?id_listing=VLaGyGkoPVMyW1ZD" target="_blank" style="color:inherit;text-decoration:underline;">87 Runnymede</a> was much smaller (700-1100 sqft), needed work, and sat for 33 days.
+  </p>
+  </details>
+</div>
+
+<!-- ACTIVE COMPETITION ON RUNNYMEDE -->
+<div class="card">
+  <details class="section-collapse">
+  <summary><h2>🏠 Active Competition on Runnymede Rd</h2></summary>
+  <p style="font-size: 13px; color: #666; margin-bottom: 12px;">Other Runnymede Rd listings currently for sale. These compete for the same buyer pool but also help establish market expectations for main-street properties.</p>
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr>
+        <th>Address</th>
+        <th>List Price</th>
+        <th>Details</th>
+        <th>Sqft</th>
+        <th>Lot</th>
+        <th>DOM</th>
+        <th>Assessment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong><a href="https://housesigma.com/on/toronto-real-estate/470-runnymede-rd/home/2Z5BX32AlRO7Dar0?id_listing=NkKJ3JJ1A6m3d4V6" target="_blank" style="color:inherit;text-decoration:underline;">470 Runnymede Rd</a></strong> <span class="badge-main">Main St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, 1 garage, 2 parkings, Partially finished bsmt, Runnymede-BWV. Tax $6,349. RE/MAX West.</span></td>
+        <td><strong>$1,499,980</strong></td>
+        <td>3 bed / 2 bath</td>
+        <td style="color:#dc2626;font-weight:600">700–1,100</td>
+        <td>22 × 100</td>
+        <td>18</td>
+        <td>
+          <span style="color:#dc2626;font-weight:600;">⚠️ STRUGGLING</span><br>
+          <span style="font-size:11px;color:#666;">SigmaEstimate: $1,463K (listed 2.5% OVER estimate). 3 prior terminated listings ($1,398K → $1,578K → $1,524K). Last sold 2018 at $1,035K. Predicted DOM ~20 days. Much smaller than 530 yet asking $300K more.</span>
+        </td>
+      </tr>
+      <tr>
+        <td><strong><a href="https://housesigma.com/on/toronto-real-estate/317-runnymede-rd/home/zVwod7vW0j935mGN?id_listing=56k97w00Qln3KRjD" target="_blank" style="color:inherit;text-decoration:underline;">317 Runnymede Rd</a></strong> <span class="badge-main">Main St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, 2 garages, 4 parkings, Full bsmt w/ sep entrance, High Park North. Tax $7,503. Royal LePage. "In the same family for 48 years."</span></td>
+        <td><strong>$1,669,000</strong></td>
+        <td>4 bed / 2 bath</td>
+        <td>1,100–1,500</td>
+        <td>30 × 120</td>
+        <td>2</td>
+        <td>
+          <span style="color:#eab308;font-weight:600;">🔶 OVERPRICED?</span><br>
+          <span style="font-size:11px;color:#666;">First time for sale (estate/downsizing). Wider lot (30') with 2 garages. Original condition (100+ yrs, never renovated). Listed same day as 530 (March 5). Predicted DOM ~40 days. Much higher than recent Runnymede sold comps ($1,225K–$1,450K).</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout-good" style="margin-top: 16px;">
+    <strong>✅ <a href="https://housesigma.com/on/toronto-real-estate/530-runnymede-rd/home/ZNkKJ3JPB26yd4V6?id_listing=amgL7Axx6glyZ1MW" target="_blank" style="color:inherit;text-decoration:underline;">530 Runnymede</a>'s Competitive Position:</strong>
+    <span>530 is the best value on Runnymede Rd right now. It's 1500–2000 sqft (much larger than 470's 700–1100 sqft), renovated (unlike 317's original condition), and priced $300K–$470K below the competition. The 99/100 popularity score confirms buyers see this. <a href="https://housesigma.com/on/toronto-real-estate/470-runnymede-rd/home/2Z5BX32AlRO7Dar0?id_listing=NkKJ3JJ1A6m3d4V6" target="_blank" style="color:inherit;text-decoration:underline;">470 Runnymede</a> has failed to sell 3 times — it's a cautionary tale about overpricing on a main street. <a href="https://housesigma.com/on/toronto-real-estate/317-runnymede-rd/home/zVwod7vW0j935mGN?id_listing=56k97w00Qln3KRjD" target="_blank" style="color:inherit;text-decoration:underline;">317 Runnymede</a> at $1,669K appears aspirational given that the fully renovated <a href="https://housesigma.com/on/toronto-real-estate/636-runnymede-road/home/JjAXw7QGLbXYQOzg?id_listing=MWBVyZW9e4q7Kemj" target="_blank" style="color:inherit;text-decoration:underline;">636 Runnymede</a> (bigger house, wider lot) only fetched $1,450K.</span>
+  </div>
+  </details>
+</div>
+
+<!-- SIDE STREET COMPS -->
+<div class="card">
+  <details class="section-collapse">
+  <summary><h2>📊 Comparable Sales — Nearby Side Streets (Premium Reference)</h2></summary>
+  <p style="font-size: 13px; color: #666; margin-bottom: 12px;">These comps show what similar homes sell for <em>without</em> the main street discount. The difference quantifies the Runnymede Road penalty.</p>
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr>
+        <th>Address</th>
+        <th>Sold Price</th>
+        <th>Sold Date</th>
+        <th>Beds/Baths</th>
+        <th>Sqft</th>
+        <th>Lot</th>
+        <th>vs. Ask</th>
+        <th>DOM</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight-row">
+        <td><strong><a href="https://housesigma.com/on/toronto-real-estate/519-durie-st/home/b1DBW7Rv9Mk7qlAp?id_listing=DO1w3W19Rqqy8Jg0" target="_blank" style="color:inherit;text-decoration:underline;">519 Durie St</a></strong> <span class="badge-side">Side St</span> <span style="background:#dc2626;color:white;font-size:9px;font-weight:700;padding:2px 5px;border-radius:3px;">NEW — 3 DAYS AGO</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, No garage, 3 parkings, Finished bsmt, 0.3km away</span></td>
+        <td><strong>$1,702,000</strong></td>
+        <td>Mar 4, 2026</td>
+        <td>3+2 / 3</td>
+        <td>1,500–2,000</td>
+        <td>25 × 105</td>
+        <td class="sold-over">▲ $103K (+6.4%)</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td><strong>100 Colbeck St</strong> <span class="badge-side">Side St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, smaller home, no garage</span></td>
+        <td><strong>$1,652,000</strong></td>
+        <td>Nov 2025</td>
+        <td>3 / 2</td>
+        <td>1,100–1,500</td>
+        <td>24 × 85</td>
+        <td class="sold-over">▲ $42K</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td><strong>16 Evans Ave</strong> <span class="badge-side">Side St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, 1 garage</span></td>
+        <td><strong>$1,607,000</strong></td>
+        <td>Nov 2025</td>
+        <td>4 / 1</td>
+        <td>1,500–2,000</td>
+        <td>28 × 109</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><strong>321 Willard Ave</strong> <span class="badge-side">Side St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, 1 garage, deep lot</span></td>
+        <td><strong>$1,700,000</strong></td>
+        <td>Nov 2025</td>
+        <td>4 / 2</td>
+        <td>1,500–2,000</td>
+        <td>25 × 156</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><strong>377 Armadale Ave</strong> <span class="badge-side">Side St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, 1 garage</span></td>
+        <td><strong>$1,560,000</strong></td>
+        <td>Oct 2025</td>
+        <td>4+1 / 2</td>
+        <td>1,100–1,500</td>
+        <td>25 × 109</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><strong>122 Colbeck St</strong> <span class="badge-side">Side St</span><br><span style="font-size:11px;color:#666">Detached 1½-Storey, 30' wide lot, Gas</span></td>
+        <td><strong>$1,563,000</strong></td>
+        <td>Aug 2025</td>
+        <td>3+1 / 3</td>
+        <td>1,500–2,000</td>
+        <td>30 × —</td>
+        <td class="sold-over">▲ $165K</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td><strong>157 Colbeck St</strong> <span class="badge-side">Side St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, 1 garage, wider lot</span></td>
+        <td><strong>$1,830,000</strong></td>
+        <td>Oct 2025</td>
+        <td>4+1 / 4</td>
+        <td>1,500–2,000</td>
+        <td>29 × 97</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><strong>418 Willard Ave</strong> <span class="badge-side">Side St</span><br><span style="font-size:11px;color:#666">Detached 2-Storey, 2 garage, wide lot</span></td>
+        <td><strong>$1,725,000</strong></td>
+        <td>Sep 2025</td>
+        <td>5 / 2</td>
+        <td>1,500–2,000</td>
+        <td>33 × 114</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <p style="font-size: 12px; color: #888; margin-top: 10px;">
+    <strong>Key Takeaway:</strong> The freshest comp — <a href="https://housesigma.com/on/toronto-real-estate/519-durie-st/home/b1DBW7Rv9Mk7qlAp?id_listing=DO1w3W19Rqqy8Jg0" target="_blank" style="color:inherit;text-decoration:underline;">519 Durie</a> (sold March 4, just 3 days ago!) — went for $1,702K, 6.4% over asking, on a side street only 0.3km from <a href="https://housesigma.com/on/toronto-real-estate/530-runnymede-rd/home/ZNkKJ3JPB26yd4V6?id_listing=amgL7Axx6glyZ1MW" target="_blank" style="color:inherit;text-decoration:underline;">530 Runnymede</a>. Side-street detached homes in the area sell for $1.56M–$1.83M. Applying the 15–25% main street discount puts <a href="https://housesigma.com/on/toronto-real-estate/530-runnymede-rd/home/ZNkKJ3JPB26yd4V6?id_listing=amgL7Axx6glyZ1MW" target="_blank" style="color:inherit;text-decoration:underline;">530 Runnymede</a>'s value at approximately $1,250K–$1,400K.
+  </p>
+  </details>
+</div>
+
+<!-- MARKET CONTEXT -->
+<div class="card">
+  <details class="section-collapse">
+  <summary><h2>📈 Market Context — Toronto W02 (Feb/Mar 2026)</h2></summary>
+  <div class="prop-grid">
+    <div>
+      <div class="prop-row"><span class="key">Avg. Detached Price (Toronto)</span><span class="val">~$1,144,400</span></div>
+      <div class="prop-row"><span class="key">Sale-to-List Ratio</span><span class="val">96–97%</span></div>
+      <div class="prop-row"><span class="key">Market Direction</span><span class="val">Softening (▼8.1% YoY)</span></div>
+    </div>
+    <div>
+      <div class="prop-row"><span class="key">Avg. DOM (Detached)</span><span class="val">~20–30 days</span></div>
+      <div class="prop-row"><span class="key">Active: <a href="https://housesigma.com/on/toronto-real-estate/317-runnymede-rd/home/zVwod7vW0j935mGN?id_listing=56k97w00Qln3KRjD" target="_blank" style="color:inherit;text-decoration:underline;">317 Runnymede</a></span><span class="val">$1,669,000 (4/2, 30×120, original)</span></div>
+      <div class="prop-row"><span class="key">Active: <a href="https://housesigma.com/on/toronto-real-estate/470-runnymede-rd/home/2Z5BX32AlRO7Dar0?id_listing=NkKJ3JJ1A6m3d4V6" target="_blank" style="color:inherit;text-decoration:underline;">470 Runnymede</a></span><span class="val">$1,499,980 (3/2, 22×100, 3× failed)</span></div>
+      <div class="prop-row"><span class="key">Rental Next Door (528)</span><span class="val">$2,500–$2,850/mo units</span></div>
+    </div>
+  </div>
+  <p style="font-size: 13px; color: #666; margin-top: 12px;">The broader Toronto detached market is softening, with prices down ~8% year-over-year. This creates a buyer-favorable environment, especially for properties with known drawbacks (main street, electric heating). Inventory is rising and bidding wars are less common than 2024.</p>
+  </details>
+</div>
+
+<!-- OFFER STRATEGY -->
+<div class="card">
+  <details class="section-collapse">
+  <summary><h2>🎯 Offer Strategy — Offer Night: Tuesday March 10</h2></summary>
+  <div class="callout-danger" style="margin-bottom: 16px;">
+    <strong>⚠️ MULTIPLE OFFERS EXPECTED:</strong>
+    <span>With 99/100 listing popularity, listing priced $50K below SigmaEstimate, and the open house weekend happening now (Mar 8), expect significant competition on offer night. The most recent side-street comp (<a href="https://housesigma.com/on/toronto-real-estate/519-durie-st/home/b1DBW7Rv9Mk7qlAp?id_listing=DO1w3W19Rqqy8Jg0" target="_blank" style="color:inherit;text-decoration:underline;">519 Durie</a>, $1,702K) sold 6.4% over asking just 3 days ago — indicating strong demand in this exact area right now.</span>
+  </div>
+
+  <p style="font-size: 14px; margin-bottom: 16px;">Fair market value range: <strong>$1,275,000–$1,400,000</strong>. Anchored to <a href="https://housesigma.com/on/toronto-real-estate/545-runnymede-road/home/b1DBW7Rlv5EYqlAp?id_listing=K8OgYBzOZ6oYJmG2" target="_blank" style="color:inherit;text-decoration:underline;">545 Runnymede</a> ($1,335K, Dec 2025) as the direct main-street comp, adjusted for 530's advantages (2-car garage, deeper lot, gas heat). The <a href="https://housesigma.com/on/toronto-real-estate/519-durie-st/home/b1DBW7Rv9Mk7qlAp?id_listing=DO1w3W19Rqqy8Jg0" target="_blank" style="color:inherit;text-decoration:underline;">519 Durie</a> sale ($1,702K on a side street, 3 days ago, +6.4% over asking) confirms strong current demand — apply the 15–20% main-street discount to get $1,360K–$1,445K range.</p>
+
+  <div class="strategy-grid">
+    <div class="strategy-card tier-conservative">
+      <div class="tier">Conservative</div>
+      <div class="range">$1,275K–$1,310K</div>
+      <div class="note">Near the <a href="https://housesigma.com/on/toronto-real-estate/545-runnymede-road/home/b1DBW7Rlv5EYqlAp?id_listing=K8OgYBzOZ6oYJmG2" target="_blank" style="color:inherit;text-decoration:underline;">545 Runnymede</a> anchor. Accounts for $6K–$14K in repairs and roof uncertainty. Likely won't win in a bidding war with 99/100 popularity.</div>
+    </div>
+    <div class="strategy-card tier-sweet">
+      <div class="tier">Sweet Spot ★</div>
+      <div class="range">$1,325K–$1,375K</div>
+      <div class="note">Matches/exceeds <a href="https://housesigma.com/on/toronto-real-estate/545-runnymede-road/home/b1DBW7Rlv5EYqlAp?id_listing=K8OgYBzOZ6oYJmG2" target="_blank" style="color:inherit;text-decoration:underline;">545 Runnymede</a> ($1,335K) and reflects 530's garage premium. <a href="https://housesigma.com/on/toronto-real-estate/519-durie-st/home/b1DBW7Rv9Mk7qlAp?id_listing=DO1w3W19Rqqy8Jg0" target="_blank" style="color:inherit;text-decoration:underline;">519 Durie</a> side-street discount supports this range. Best balance of winning and value.</div>
+    </div>
+    <div class="strategy-card tier-aggressive">
+      <div class="tier">Aggressive (To Win)</div>
+      <div class="range">$1,380K–$1,425K</div>
+      <div class="note">If you must win. Still below <a href="https://housesigma.com/on/toronto-real-estate/636-runnymede-road/home/JjAXw7QGLbXYQOzg?id_listing=MWBVyZW9e4q7Kemj" target="_blank" style="color:inherit;text-decoration:underline;">636 Runnymede</a> ($1.45M, gut reno, wider lot). Justified by 2-car garage premium and <a href="https://housesigma.com/on/toronto-real-estate/519-durie-st/home/b1DBW7Rv9Mk7qlAp?id_listing=DO1w3W19Rqqy8Jg0" target="_blank" style="color:inherit;text-decoration:underline;">519 Durie</a>'s $1.7M side-street price with 15-20% main-street discount applied.</div>
+    </div>
+  </div>
+
+  <div style="background:#eff6ff; border:1px solid #93c5fd; border-radius:8px; padding:16px 20px; margin-top:16px;">
+    <div style="font-weight:700; color:#1e40af; margin-bottom:6px;">💡 Offer Night Tactics</div>
+    <div style="font-size:13px; color:#1e3a5f; line-height:1.7;">
+      <strong>1. Escalation clause:</strong> Consider offering $1,325K with an escalation clause up to $1,375K–$1,400K in $5K increments above the next highest offer. This protects you from overpaying while staying competitive.<br>
+      <strong>2. Conditions:</strong> A clean (no conditions) offer is stronger but riskier. Since you already have the Carson Dunlop inspection, you have more confidence to go firm. Consider whether you need a financing condition.<br>
+      <strong>3. Deposit:</strong> A strong deposit ($50K–$75K) signals seriousness.<br>
+      <strong>4. Closing date:</strong> Be flexible — match the seller's preference (they've owned since 2012, likely need time to find a new home). A 60–90 day close may be appealing to them.
+    </div>
+  </div>
+  </details>
+</div>
+
+<!-- ADVANTAGES & RISKS -->
+<div class="card">
+  <details class="section-collapse">
+  <summary><h2>⚖️ Advantages &amp; Considerations</h2></summary>
+  <div class="pros-cons">
+    <div class="pros-list">
+      <h3>✅ Strengths</h3>
+      <ul>
+        <li><strong>2-car detached garage + laneway parking</strong> — rare for the area, 3 total spots</li>
+        <li><strong>Deep lot (149 ft)</strong> — one of the deepest on Runnymede</li>
+        <li><strong>Finished basement with walkout & sep. entrance</strong> — income/nanny suite potential</li>
+        <li><strong>9'9" ceilings</strong> — premium ceiling height for 1920s home</li>
+        <li><strong>Detached</strong> — not semi or row, premium housing type</li>
+        <li><strong>Bloor West Village location</strong> — top-tier schools, TTC, shops</li>
+        <li><strong>Chef's kitchen, open concept</strong> — modern layout</li>
+        <li><strong>Stained glass, period details</strong> — character appeal</li>
+        <li><strong>One-of-a-kind character</strong> — former commercial building (believed to be a butcher shop), unlike anything else on the street. The kind of house people remember.</li>
+      </ul>
+    </div>
+    <div class="cons-list">
+      <h3>⚠️ Considerations</h3>
+      <ul>
+        <li><strong>Main street (Runnymede Rd)</strong> — 10-20% discount vs. side streets, traffic noise, reduced privacy</li>
+        <li><strong>Water heater at 25 years</strong> — well past 10-15 yr life expectancy, replacement needed immediately ($1.5K–$2.5K)</li>
+        <li><strong>Roof age/condition unknown</strong> — could not be fully inspected due to snow; may need replacement</li>
+        <li><strong>Exterior mortar deterioration + spalling</strong> — typical for 100-yr brick but $1K–$3K to repair</li>
+        <li><strong>Basement walkout issues</strong> — water stains, crumbling parging, moisture damage ($2K–$4K)</li>
+        <li><strong>Narrower lot (20 ft)</strong> — <a href="https://housesigma.com/on/toronto-real-estate/545-runnymede-road/home/b1DBW7Rlv5EYqlAp?id_listing=K8OgYBzOZ6oYJmG2" target="_blank" style="color:inherit;text-decoration:underline;">545 Runnymede</a> similar, but 636 was 27.3' wide</li>
+        <li><strong>Softening market</strong> — prices down 8% YoY in Toronto detached</li>
+        <li><strong>528 Runnymede is a rental next door</strong> — investor-owned property, potential tenant turnover</li>
+        <li><strong>Possible hidden K&T wiring</strong> — no active K&T found, but inspector notes it may exist given age of home</li>
+        <li><strong>Unconventional exterior & layout</strong> — the building's commercial origins (former butcher shop) give it a storefront-like facade and a "funky" interior layout that's functional but unlike typical residential homes. This can polarize buyers — some will love it, others won't get past it. Narrower resale pool.</li>
+      </ul>
+    </div>
+  </div>
+  </details>
+</div>
+
+<!-- NEGOTIATION LEVERAGE -->
+<div class="card">
+  <details class="section-collapse">
+  <summary><h2>🤝 Negotiation Leverage Points</h2></summary>
+  <div style="font-size: 13px; line-height: 1.8;">
+    <p>When positioning your offer, these are the key points to justify a price below the emotional anchor of the listing:</p>
+    <ol style="margin-top: 10px; padding-left: 20px;">
+      <li><strong>$6K–$14K in inspection-identified repairs:</strong> The Carson Dunlop report documents a 25-year-old water heater (needs immediate replacement), exterior mortar deterioration, basement walkout damage, and other items totaling $6K–$14K. These are quantifiable, report-backed costs.</li>
+      <li><strong>Main street location:</strong> Direct comps on Runnymede sell $200K–$500K below equivalent side-street homes. This isn't negotiable — it's a permanent feature of the property.</li>
+      <li><strong>Roof uncertainty:</strong> The roof could not be fully inspected due to snow. If the covering is nearing end of life, that's $10K–$20K+. This unknown risk justifies a conservative offer.</li>
+      <li><strong>Market conditions:</strong> Toronto detached prices are down 8% YoY. Sale-to-list ratios are 96-97%. This isn't a bidding war market.</li>
+      <li><strong><a href="https://housesigma.com/on/toronto-real-estate/545-runnymede-road/home/b1DBW7Rlv5EYqlAp?id_listing=K8OgYBzOZ6oYJmG2" target="_blank" style="color:inherit;text-decoration:underline;">545 Runnymede</a> anchor:</strong> The most direct comparable (same street, similar size) sold at $1,335K in Dec 2025.</li>
+      <li><strong><a href="https://housesigma.com/on/toronto-real-estate/519-durie-st/home/b1DBW7Rv9Mk7qlAp?id_listing=DO1w3W19Rqqy8Jg0" target="_blank" style="color:inherit;text-decoration:underline;">519 Durie</a> side-street premium context:</strong> While <a href="https://housesigma.com/on/toronto-real-estate/519-durie-st/home/b1DBW7Rv9Mk7qlAp?id_listing=DO1w3W19Rqqy8Jg0" target="_blank" style="color:inherit;text-decoration:underline;">519 Durie</a> sold for $1,702K (Mar 4), that's a quiet side street. Applying the established 15–20% main-street discount: $1,702K × 0.80–0.85 = $1,362K–$1,447K. This frames your offer in the $1,325K–$1,400K range as data-backed.</li>
+      <li><strong>Rental property next door (528):</strong> Adjacent rental units can be a concern for owner-occupant buyers.</li>
+      <li><strong>Unconventional building (former butcher shop):</strong> The storefront-like exterior and non-standard interior layout will polarize buyers. Some will love the character; others will walk away. This narrows the resale pool and is a legitimate reason to price below a "normal" detached home.</li>
+    </ol>
+  </div>
+  </details>
+</div>
+
+<!-- SELLER'S PERSPECTIVE -->
+<div class="card">
+  <details class="section-collapse">
+  <summary><h2>🪞 Seller's Perspective — What the Other Side Is Thinking</h2></summary>
+  <p style="font-size: 13px; color: #666; margin-bottom: 16px;">Understanding the seller's mindset and their agent's expectations helps frame the right offer. Here's what's likely happening on the other side of the table.</p>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+    <div style="background:#faf5ff; border:1px solid #d8b4fe; border-radius:8px; padding:16px;">
+      <div style="font-size:11px; text-transform:uppercase; color:#7e22ce; font-weight:700; margin-bottom:6px;">Seller's Position</div>
+      <div style="font-size:13px; line-height:1.7;">
+        Purchased in <strong>2012 for $699,900</strong>. Sitting on $500K–$700K in equity regardless of outcome. They are <strong>not desperate</strong> — they can afford to wait for the right number. But they've also chosen to list with an offer night strategy, which means they want to sell now, not test the market.
+      </div>
+    </div>
+    <div style="background:#faf5ff; border:1px solid #d8b4fe; border-radius:8px; padding:16px;">
+      <div style="font-size:11px; text-transform:uppercase; color:#7e22ce; font-weight:700; margin-bottom:6px;">Agent's Pricing Strategy</div>
+      <div style="font-size:13px; line-height:1.7;">
+        Listed at <strong>$1,199K — deliberately $50K below the SigmaEstimate</strong> ($1,249K). This is textbook "price low, drive traffic, create a bidding war." The Babiak Team wants 5–8 offers on the table Tuesday night. The 99/100 popularity score tells them the strategy is working.
+      </div>
+    </div>
+  </div>
+
+  <h3 style="color:#7e22ce; margin-bottom:10px;">What the Seller's Agent Is Likely Telling Their Client</h3>
+  <div style="background:white; border:1px solid #e9d5ff; border-radius:8px; padding:16px; margin-bottom:16px;">
+    <div style="font-size:13px; line-height:1.8;">
+      <strong>"Expect $1,300K–$1,400K."</strong> The agent's math: <a href="https://housesigma.com/on/toronto-real-estate/545-runnymede-road/home/b1DBW7Rlv5EYqlAp?id_listing=K8OgYBzOZ6oYJmG2" target="_blank" style="color:#7e22ce;text-decoration:underline;">545 Runnymede</a> sold for $1,335K (Dec 2025) and 530 is arguably better — 2-car garage, deeper lot, gas furnace, basement suite. The agent believes a $30K–$65K premium over 545 is justified, putting the target at <strong>$1,350K–$1,400K</strong>.
+      <br><br>
+      The agent is privately hoping one emotional bidder pushes past $1,400K, but isn't banking on it. They know the funky exterior and unconventional layout (former butcher shop) will thin the offer pool. The 99/100 score measures clicks, not committed bidders.
+    </div>
+  </div>
+
+  <h3 style="color:#7e22ce; margin-bottom:10px;">Seller's Expectations vs. Reality</h3>
+  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:16px;">
+    <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px; padding:14px; text-align:center;">
+      <div style="font-size:11px; text-transform:uppercase; color:#166534; font-weight:700;">Would Accept</div>
+      <div style="font-size:22px; font-weight:800; color:#166534;">$1,300K+</div>
+      <div style="font-size:11px; color:#666;">That's $600K profit on a $700K purchase. Hard to say no.</div>
+    </div>
+    <div style="background:#eff6ff; border:1px solid #93c5fd; border-radius:8px; padding:14px; text-align:center;">
+      <div style="font-size:11px; text-transform:uppercase; color:#1e40af; font-weight:700;">Expecting</div>
+      <div style="font-size:22px; font-weight:800; color:#1e40af;">$1,325K–$1,380K</div>
+      <div style="font-size:11px; color:#666;">Agent's realistic range based on comp data and offer night dynamics.</div>
+    </div>
+    <div style="background:#faf5ff; border:1px solid #d8b4fe; border-radius:8px; padding:14px; text-align:center;">
+      <div style="font-size:11px; text-transform:uppercase; color:#7e22ce; font-weight:700;">Dreaming Of</div>
+      <div style="font-size:22px; font-weight:800; color:#7e22ce;">$1,400K–$1,450K</div>
+      <div style="font-size:11px; color:#666;">Possible but unlikely — would require 5+ offers and an emotional overbid.</div>
+    </div>
+  </div>
+
+  <h3 style="color:#7e22ce; margin-bottom:10px;">What Worries the Seller's Side</h3>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px;">
+    <div style="background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:14px;">
+      <div style="font-size:13px;"><strong>🏪 The funky factor narrows the pool.</strong> The storefront exterior and non-standard layout will turn off traditional buyers. High online interest (99/100) may not translate to 5+ serious offers. If only 2–3 offers come in, bidding war dynamics weaken significantly.</div>
+    </div>
+    <div style="background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:14px;">
+      <div style="font-size:13px;"><strong>🏚️ <a href="https://housesigma.com/on/toronto-real-estate/470-runnymede-rd/home/2Z5BX32AlRO7Dar0?id_listing=NkKJ3JJ1A6m3d4V6" target="_blank" style="color:#7e22ce;text-decoration:underline;">470 Runnymede</a> is a cautionary tale.</strong> Three terminated listings, 18+ DOM, and still sitting. The seller's agent knows that overpricing on a main street leads to stale listings. They need to close this on offer night, not drag it out.</div>
+    </div>
+    <div style="background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:14px;">
+      <div style="font-size:13px;"><strong>📉 Softening market.</strong> Toronto detached prices are down 8% YoY. The sale-to-list ratio is 96–97%. The bidding war era is fading. The agent knows that if offer night doesn't produce a strong result, relisting gets progressively harder.</div>
+    </div>
+    <div style="background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:14px;">
+      <div style="font-size:13px;"><strong>🏷️ <a href="https://housesigma.com/on/toronto-real-estate/317-runnymede-rd/home/zVwod7vW0j935mGN?id_listing=56k97w00Qln3KRjD" target="_blank" style="color:#7e22ce;text-decoration:underline;">317 Runnymede</a> listed the same day at $1,669K.</strong> This actually helps the seller's agent frame 530 as the "deal" on Runnymede. But it also reminds buyers that main-street pricing is chaotic — two houses on the same street, $470K apart, listed the same day.</div>
+    </div>
+  </div>
+
+  <div style="background:linear-gradient(135deg, #581c87 0%, #7e22ce 100%); color:white; border-radius:8px; padding:18px 22px;">
+    <div style="font-weight:700; font-size:15px; margin-bottom:8px;">💡 What This Means for Your Offer</div>
+    <div style="font-size:13px; line-height:1.8; opacity:0.95;">
+      A <strong>$1,380K clean offer</strong> with a <strong>$100K deposit</strong> and <strong>flexible closing</strong> lands at the very top of the seller's realistic expectations. It clears the 545 Runnymede anchor by $45K, signals serious intent, and removes all risk for the seller. The only scenario where this doesn't win is if another buyer comes in clean at $1,400K+ — which requires someone willing to pay more than the data supports. The seller's agent will look at your offer and tell their client: <strong>"This is a strong offer. Taking it is the smart move."</strong>
+    </div>
+  </div>
+  </details>
+</div>
+
+<!-- ============================== -->
+<!-- FULL INSPECTION REPORT SECTION -->
+<!-- ============================== -->
+
+<div class="card">
+  <details class="section-collapse">
+  <summary><h2>✅ Bottom Line</h2></summary>
   <p><a href="https://housesigma.com/on/toronto-real-estate/530-runnymede-rd/home/ZNkKJ3JPB26yd4V6?id_listing=amgL7Axx6glyZ1MW" target="_blank" style="color:inherit;text-decoration:underline;">530 Runnymede</a> is a solid detached home in a premium neighborhood, with standout features like a 2-car garage, deep lot, and basement suite potential. The Carson Dunlop inspection is largely reassuring — structure sound, 200A electrical, gas furnace (12 yrs old), $6K–$14K in known repairs. <strong>However, with 99/100 listing popularity, expect serious competition on offer night (Tuesday March 10).</strong> The freshest comp — <a href="https://housesigma.com/on/toronto-real-estate/519-durie-st/home/b1DBW7Rv9Mk7qlAp?id_listing=DO1w3W19Rqqy8Jg0" target="_blank" style="color:inherit;text-decoration:underline;">519 Durie St</a>, just 0.3km away, sold 3 days ago for $1,702K (+6.4% over asking) — proves strong current demand in this exact area. Applying the main-street discount: fair value is <strong>$1,325K–$1,400K</strong>. The sweet spot is <strong>$1,325K–$1,375K</strong>. If you need to win, be prepared to go up to <strong>$1,400K–$1,425K</strong> — still below the renovated <a href="https://housesigma.com/on/toronto-real-estate/636-runnymede-road/home/JjAXw7QGLbXYQOzg?id_listing=MWBVyZW9e4q7Kemj" target="_blank" style="color:inherit;text-decoration:underline;">636 Runnymede</a> ($1.45M) and well-supported by the comp data. The seller bought in 2012 for $700K — they have significant equity and will likely accept a strong offer in this range.</p>
   </details>
 </div>
